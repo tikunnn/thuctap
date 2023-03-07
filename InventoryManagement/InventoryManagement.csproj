@@ -123,6 +123,9 @@
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>STORAGEDbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Xoa.cs">
+      <DependentUpon>STORAGEDbContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\StaffManagementForm.resx">
@@ -163,16 +166,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
-      <Project>{59b96246-3848-46e6-ac5f-919ab32cf89c}</Project>
-      <Name>BusinessLogic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{11f208d8-79be-4a1a-b68f-5128dcf352c6}</Project>
-      <Name>DataAccess</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

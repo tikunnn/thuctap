@@ -21,9 +21,8 @@ namespace InventoryManagement.Models
         public Nullable<System.DateTime> Created_At { get; set; }
         public string Updated_By { get; set; }
         public Nullable<System.DateTime> Updated_At { get; set; }
-        public string Removed { get; set; }
-        public string Remove_Reason { get; set; }
         public Nullable<double> Gia { get; set; }
+        public Nullable<int> ID_Xoa { get; set; }
     
         public virtual HangHoa HangHoa { get; set; }
         public virtual HoaDonBan HoaDonBan { get; set; }

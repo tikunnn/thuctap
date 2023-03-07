@@ -5,16 +5,17 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="7f9219174a254137bd4e4311e821f93e" Name="Diagram1">
-        <EntityTypeShape EntityType="STORAGEModel.CT_HoaDonBan" Width="1.5" PointX="8.25" PointY="6" />
-        <EntityTypeShape EntityType="STORAGEModel.CT_HoaDonMua" Width="1.5" PointX="11.25" PointY="6" />
-        <EntityTypeShape EntityType="STORAGEModel.HangHoa" Width="1.5" PointX="6" PointY="0.75" />
-        <EntityTypeShape EntityType="STORAGEModel.HoaDonBan" Width="1.5" PointX="3" PointY="5.625" />
-        <EntityTypeShape EntityType="STORAGEModel.HoaDonMua" Width="1.5" PointX="6" PointY="5.625" />
-        <EntityTypeShape EntityType="STORAGEModel.KhachHang" Width="1.5" PointX="0.75" PointY="0.875" />
-        <EntityTypeShape EntityType="STORAGEModel.Kho" Width="1.5" PointX="0.75" PointY="11" />
-        <EntityTypeShape EntityType="STORAGEModel.NhaCungCap" Width="1.5" PointX="3.75" PointY="1" />
-        <EntityTypeShape EntityType="STORAGEModel.NhanVien" Width="1.5" PointX="0.75" PointY="5.375" />
-        <EntityTypeShape EntityType="STORAGEModel.sysdiagram" Width="1.5" PointX="8.75" PointY="2.875" />
+        <EntityTypeShape EntityType="STORAGEModel.CT_HoaDonBan" Width="1.5" PointX="8.25" PointY="6.125" />
+        <EntityTypeShape EntityType="STORAGEModel.CT_HoaDonMua" Width="1.5" PointX="11.25" PointY="6.125" />
+        <EntityTypeShape EntityType="STORAGEModel.HangHoa" Width="1.5" PointX="6" PointY="1" />
+        <EntityTypeShape EntityType="STORAGEModel.HoaDonBan" Width="1.5" PointX="3" PointY="5.875" />
+        <EntityTypeShape EntityType="STORAGEModel.HoaDonMua" Width="1.5" PointX="6" PointY="5.875" />
+        <EntityTypeShape EntityType="STORAGEModel.KhachHang" Width="1.5" PointX="0.75" PointY="10.625" />
+        <EntityTypeShape EntityType="STORAGEModel.Kho" Width="1.5" PointX="0.75" PointY="6.125" />
+        <EntityTypeShape EntityType="STORAGEModel.NhaCungCap" Width="1.5" PointX="3.75" PointY="1.125" />
+        <EntityTypeShape EntityType="STORAGEModel.NhanVien" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="STORAGEModel.sysdiagram" Width="1.5" PointX="8.75" PointY="3.125" />
+        <EntityTypeShape EntityType="STORAGEModel.Xoa" Width="1.5" PointX="2.75" PointY="11.125" />
         <AssociationConnector Association="STORAGEModel.FK_CT_HoaDonBan_HangHoa" />
         <AssociationConnector Association="STORAGEModel.FK_CT_HoaDonBan_HoaDonBan" />
         <AssociationConnector Association="STORAGEModel.FK_CT_HoaDonMua_HangHoa" />

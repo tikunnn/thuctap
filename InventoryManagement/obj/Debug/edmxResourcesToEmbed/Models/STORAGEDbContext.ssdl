@@ -4,37 +4,35 @@
     <Key>
       <PropertyRef Name="ID HoaDonBan" />
     </Key>
-    <Property Name="ID HoaDonBan" Type="int" Nullable="false" />
+    <Property Name="ID HoaDonBan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ID HangHoa" Type="int" Nullable="false" />
     <Property Name="SoLuong" Type="int" />
     <Property Name="Created_By" Type="nvarchar" MaxLength="200" />
     <Property Name="Created_At" Type="datetime" />
     <Property Name="Updated_By" Type="nvarchar" MaxLength="200" />
     <Property Name="Updated_At" Type="datetime" />
-    <Property Name="Removed" Type="nvarchar" MaxLength="200" />
-    <Property Name="Remove_Reason" Type="nvarchar" MaxLength="200" />
     <Property Name="Gia" Type="float" />
+    <Property Name="ID Xoa" Type="int" />
   </EntityType>
   <EntityType Name="CT_HoaDonMua">
     <Key>
       <PropertyRef Name="ID HoaDonMua" />
     </Key>
-    <Property Name="ID HoaDonMua" Type="int" Nullable="false" />
+    <Property Name="ID HoaDonMua" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ID HangHoa" Type="int" Nullable="false" />
     <Property Name="SoLuong" Type="int" />
     <Property Name="Created_By" Type="nvarchar" MaxLength="200" />
     <Property Name="Created_At" Type="datetime" />
     <Property Name="Updated_By" Type="nvarchar" MaxLength="200" />
     <Property Name="Updated_At" Type="datetime" />
-    <Property Name="Removed" Type="nvarchar" MaxLength="200" />
-    <Property Name="Remove_Reason" Type="nvarchar" MaxLength="200" />
     <Property Name="Gia" Type="float" />
+    <Property Name="ID Xoa" Type="int" />
   </EntityType>
   <EntityType Name="HangHoa">
     <Key>
       <PropertyRef Name="ID HangHoa" />
     </Key>
-    <Property Name="ID HangHoa" Type="int" Nullable="false" />
+    <Property Name="ID HangHoa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Ten" Type="nvarchar" MaxLength="200" />
     <Property Name="DonViTinh" Type="nvarchar" MaxLength="50" />
     <Property Name="GiaBan" Type="float" />
@@ -44,14 +42,13 @@
     <Property Name="Created_At" Type="datetime" />
     <Property Name="Updated_By" Type="nvarchar" MaxLength="200" />
     <Property Name="Updated_At" Type="datetime" />
-    <Property Name="Removed" Type="nvarchar" MaxLength="200" />
-    <Property Name="Remove_Reason" Type="nvarchar" MaxLength="200" />
+    <Property Name="ID Xoa" Type="int" />
   </EntityType>
   <EntityType Name="HoaDonBan">
     <Key>
       <PropertyRef Name="ID HoaDonBan" />
     </Key>
-    <Property Name="ID HoaDonBan" Type="int" Nullable="false" />
+    <Property Name="ID HoaDonBan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ID KhachHang" Type="int" />
     <Property Name="NgayBan" Type="datetime" />
     <Property Name="ID NhanVien" Type="int" />
@@ -60,14 +57,13 @@
     <Property Name="Created_At" Type="datetime" />
     <Property Name="Updated_By" Type="nvarchar" MaxLength="200" />
     <Property Name="Updated_At" Type="datetime" />
-    <Property Name="Removed" Type="nvarchar" MaxLength="200" />
-    <Property Name="Remove_Reason" Type="nvarchar" MaxLength="200" />
+    <Property Name="ID Xoa" Type="int" />
   </EntityType>
   <EntityType Name="HoaDonMua">
     <Key>
       <PropertyRef Name="ID HDMua" />
     </Key>
-    <Property Name="ID HDMua" Type="int" Nullable="false" />
+    <Property Name="ID HDMua" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ID NhaCungCap" Type="int" />
     <Property Name="NgayNhap" Type="datetime" />
     <Property Name="ID NhanVien" Type="int" />
@@ -76,14 +72,13 @@
     <Property Name="Created_At" Type="datetime" />
     <Property Name="Updated_By" Type="nvarchar" MaxLength="200" />
     <Property Name="Updated_At" Type="datetime" />
-    <Property Name="Removed" Type="nvarchar" MaxLength="200" />
-    <Property Name="Remove_Reason" Type="nvarchar" MaxLength="200" />
+    <Property Name="ID Xoa" Type="int" />
   </EntityType>
   <EntityType Name="KhachHang">
     <Key>
       <PropertyRef Name="ID KhachHang" />
     </Key>
-    <Property Name="ID KhachHang" Type="int" Nullable="false" />
+    <Property Name="ID KhachHang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Ten" Type="nvarchar" MaxLength="200" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="500" />
     <Property Name="SoDienThoai" Type="nchar" MaxLength="50" />
@@ -92,14 +87,13 @@
     <Property Name="Created_At" Type="datetime" />
     <Property Name="Updated_By" Type="nvarchar" MaxLength="200" />
     <Property Name="Updated_At" Type="datetime" />
-    <Property Name="Removed" Type="nvarchar" MaxLength="200" />
-    <Property Name="Remove_Reason" Type="nvarchar" MaxLength="200" />
+    <Property Name="ID Xoa" Type="int" />
   </EntityType>
   <EntityType Name="Kho">
     <Key>
       <PropertyRef Name="ID Kho" />
     </Key>
-    <Property Name="ID Kho" Type="int" Nullable="false" />
+    <Property Name="ID Kho" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Ten" Type="nvarchar" MaxLength="200" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="200" />
     <Property Name="SoDienThoai" Type="nchar" MaxLength="30" />
@@ -107,14 +101,13 @@
     <Property Name="Created_At" Type="datetime" />
     <Property Name="Updated_By" Type="nvarchar" MaxLength="200" />
     <Property Name="Updated_At" Type="datetime" />
-    <Property Name="Removed" Type="nvarchar" MaxLength="200" />
-    <Property Name="Remove_Reason" Type="nvarchar" MaxLength="200" />
+    <Property Name="ID Xoa" Type="int" />
   </EntityType>
   <EntityType Name="NhaCungCap">
     <Key>
       <PropertyRef Name="ID NhaCungCap" />
     </Key>
-    <Property Name="ID NhaCungCap" Type="int" Nullable="false" />
+    <Property Name="ID NhaCungCap" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenNhaCungCap" Type="nvarchar" MaxLength="200" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="200" />
     <Property Name="SoDienThoai" Type="nchar" MaxLength="30" />
@@ -123,18 +116,16 @@
     <Property Name="Created_At" Type="datetime" />
     <Property Name="Updated_By" Type="nvarchar" MaxLength="200" />
     <Property Name="Updated_At" Type="datetime" />
-    <Property Name="Removed" Type="nvarchar" MaxLength="200" />
-    <Property Name="Remove_Reason" Type="nvarchar" MaxLength="200" />
+    <Property Name="ID Xoa" Type="int" />
   </EntityType>
   <EntityType Name="NhanVien">
     <Key>
       <PropertyRef Name="ID NhanVien" />
     </Key>
-    <Property Name="ID NhanVien" Type="int" Nullable="false" />
+    <Property Name="ID NhanVien" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Ten" Type="nvarchar" MaxLength="200" />
     <Property Name="NgaySinh" Type="date" />
     <Property Name="GioiTinh" Type="bit" />
-    <Property Name="QueQuan" Type="nvarchar" MaxLength="500" />
     <Property Name="DienThoai" Type="nchar" MaxLength="12" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="500" />
     <Property Name="Luong" Type="float" />
@@ -142,10 +133,9 @@
     <Property Name="Created_At" Type="datetime" />
     <Property Name="Updated_By" Type="nvarchar" MaxLength="200" />
     <Property Name="Updated_At" Type="datetime" />
-    <Property Name="Removed" Type="nvarchar" MaxLength="200" />
-    <Property Name="Remove_Reason" Type="nvarchar" MaxLength="200" />
     <Property Name="UserName" Type="nvarchar" MaxLength="200" />
     <Property Name="Pasword" Type="nvarchar" MaxLength="200" />
+    <Property Name="ID Xoa" Type="int" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -156,6 +146,14 @@
     <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Xoa">
+    <Key>
+      <PropertyRef Name="ID Xoa" />
+    </Key>
+    <Property Name="ID Xoa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="500" />
+    <Property Name="LyDo" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <Association Name="FK_CT_HoaDonBan_HangHoa">
     <End Role="HangHoa" Type="Self.HangHoa" Multiplicity="1" />
@@ -288,6 +286,7 @@
     <EntitySet Name="NhaCungCap" EntityType="Self.NhaCungCap" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Xoa" EntityType="Self.Xoa" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_CT_HoaDonBan_HangHoa" Association="Self.FK_CT_HoaDonBan_HangHoa">
       <End Role="HangHoa" EntitySet="HangHoa" />
       <End Role="CT_HoaDonBan" EntitySet="CT_HoaDonBan" />

@@ -25,7 +25,6 @@ namespace InventoryManagement.Models
         public string Ten { get; set; }
         public Nullable<System.DateTime> NgaySinh { get; set; }
         public Nullable<bool> GioiTinh { get; set; }
-        public string QueQuan { get; set; }
         public string DienThoai { get; set; }
         public string DiaChi { get; set; }
         public Nullable<double> Luong { get; set; }
@@ -33,10 +32,9 @@ namespace InventoryManagement.Models
         public Nullable<System.DateTime> Created_At { get; set; }
         public string Updated_By { get; set; }
         public Nullable<System.DateTime> Updated_At { get; set; }
-        public string Removed { get; set; }
-        public string Remove_Reason { get; set; }
         public string UserName { get; set; }
         public string Pasword { get; set; }
+        public Nullable<int> ID_Xoa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDonBan> HoaDonBans { get; set; }

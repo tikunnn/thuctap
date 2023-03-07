@@ -1,10 +1,6 @@
 D:\workspace\InventoryManagement(TT)\InventoryManagement\InventoryManagement\bin\Debug\InventoryManagement.exe.config
 D:\workspace\InventoryManagement(TT)\InventoryManagement\InventoryManagement\bin\Debug\InventoryManagement.exe
 D:\workspace\InventoryManagement(TT)\InventoryManagement\InventoryManagement\bin\Debug\InventoryManagement.pdb
-D:\workspace\InventoryManagement(TT)\InventoryManagement\InventoryManagement\bin\Debug\BusinessLogic.dll
-D:\workspace\InventoryManagement(TT)\InventoryManagement\InventoryManagement\bin\Debug\DataAccess.dll
-D:\workspace\InventoryManagement(TT)\InventoryManagement\InventoryManagement\bin\Debug\BusinessLogic.pdb
-D:\workspace\InventoryManagement(TT)\InventoryManagement\InventoryManagement\bin\Debug\DataAccess.pdb
 D:\workspace\InventoryManagement(TT)\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.csproj.AssemblyReference.cache
 D:\workspace\InventoryManagement(TT)\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.csproj.SuggestedBindingRedirects.cache
 D:\workspace\InventoryManagement(TT)\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Login.resources
