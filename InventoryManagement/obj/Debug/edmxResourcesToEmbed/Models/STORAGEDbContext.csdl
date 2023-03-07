@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="STORAGEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="STORAGEEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CT_HoaDonBan" EntityType="STORAGEModel.CT_HoaDonBan" />
+    <EntitySet Name="CT_HoaDonMua" EntityType="STORAGEModel.CT_HoaDonMua" />
+    <EntitySet Name="HangHoas" EntityType="STORAGEModel.HangHoa" />
+    <EntitySet Name="HoaDonBans" EntityType="STORAGEModel.HoaDonBan" />
+    <EntitySet Name="HoaDonMuas" EntityType="STORAGEModel.HoaDonMua" />
+    <EntitySet Name="KhachHangs" EntityType="STORAGEModel.KhachHang" />
+    <EntitySet Name="Khoes" EntityType="STORAGEModel.Kho" />
+    <EntitySet Name="NhaCungCaps" EntityType="STORAGEModel.NhaCungCap" />
+    <EntitySet Name="NhanViens" EntityType="STORAGEModel.NhanVien" />
+    <EntitySet Name="sysdiagrams" EntityType="STORAGEModel.sysdiagram" />
+    <AssociationSet Name="FK_CT_HoaDonBan_HangHoa" Association="STORAGEModel.FK_CT_HoaDonBan_HangHoa">
+      <End Role="HangHoa" EntitySet="HangHoas" />
+      <End Role="CT_HoaDonBan" EntitySet="CT_HoaDonBan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_HoaDonBan_HoaDonBan" Association="STORAGEModel.FK_CT_HoaDonBan_HoaDonBan">
+      <End Role="HoaDonBan" EntitySet="HoaDonBans" />
+      <End Role="CT_HoaDonBan" EntitySet="CT_HoaDonBan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_HoaDonMua_HangHoa" Association="STORAGEModel.FK_CT_HoaDonMua_HangHoa">
+      <End Role="HangHoa" EntitySet="HangHoas" />
+      <End Role="CT_HoaDonMua" EntitySet="CT_HoaDonMua" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_HoaDonMua_HoaDonMua" Association="STORAGEModel.FK_CT_HoaDonMua_HoaDonMua">
+      <End Role="HoaDonMua" EntitySet="HoaDonMuas" />
+      <End Role="CT_HoaDonMua" EntitySet="CT_HoaDonMua" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDonBan_KhachHang" Association="STORAGEModel.FK_HoaDonBan_KhachHang">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="HoaDonBan" EntitySet="HoaDonBans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDonBan_Kho" Association="STORAGEModel.FK_HoaDonBan_Kho">
+      <End Role="Kho" EntitySet="Khoes" />
+      <End Role="HoaDonBan" EntitySet="HoaDonBans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDonBan_NhanVien" Association="STORAGEModel.FK_HoaDonBan_NhanVien">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="HoaDonBan" EntitySet="HoaDonBans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDonMua_Kho" Association="STORAGEModel.FK_HoaDonMua_Kho">
+      <End Role="Kho" EntitySet="Khoes" />
+      <End Role="HoaDonMua" EntitySet="HoaDonMuas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDonMua_NhaCungCap" Association="STORAGEModel.FK_HoaDonMua_NhaCungCap">
+      <End Role="NhaCungCap" EntitySet="NhaCungCaps" />
+      <End Role="HoaDonMua" EntitySet="HoaDonMuas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDonMua_NhanVien" Association="STORAGEModel.FK_HoaDonMua_NhanVien">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="HoaDonMua" EntitySet="HoaDonMuas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CT_HoaDonBan">
+    <Key>
+      <PropertyRef Name="ID_HoaDonBan" />
+    </Key>
+    <Property Name="ID_HoaDonBan" Type="Int32" Nullable="false" />
+    <Property Name="ID_HangHoa" Type="Int32" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="Created_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Created_At" Type="DateTime" Precision="3" />
+    <Property Name="Updated_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Updated_At" Type="DateTime" Precision="3" />
+    <Property Name="Removed" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Remove_Reason" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Gia" Type="Double" />
+    <NavigationProperty Name="HangHoa" Relationship="STORAGEModel.FK_CT_HoaDonBan_HangHoa" FromRole="CT_HoaDonBan" ToRole="HangHoa" />
+    <NavigationProperty Name="HoaDonBan" Relationship="STORAGEModel.FK_CT_HoaDonBan_HoaDonBan" FromRole="CT_HoaDonBan" ToRole="HoaDonBan" />
+  </EntityType>
+  <EntityType Name="CT_HoaDonMua">
+    <Key>
+      <PropertyRef Name="ID_HoaDonMua" />
+    </Key>
+    <Property Name="ID_HoaDonMua" Type="Int32" Nullable="false" />
+    <Property Name="ID_HangHoa" Type="Int32" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="Created_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Created_At" Type="DateTime" Precision="3" />
+    <Property Name="Updated_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Updated_At" Type="DateTime" Precision="3" />
+    <Property Name="Removed" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Remove_Reason" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Gia" Type="Double" />
+    <NavigationProperty Name="HangHoa" Relationship="STORAGEModel.FK_CT_HoaDonMua_HangHoa" FromRole="CT_HoaDonMua" ToRole="HangHoa" />
+    <NavigationProperty Name="HoaDonMua" Relationship="STORAGEModel.FK_CT_HoaDonMua_HoaDonMua" FromRole="CT_HoaDonMua" ToRole="HoaDonMua" />
+  </EntityType>
+  <EntityType Name="HangHoa">
+    <Key>
+      <PropertyRef Name="ID_HangHoa" />
+    </Key>
+    <Property Name="ID_HangHoa" Type="Int32" Nullable="false" />
+    <Property Name="Ten" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DonViTinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GiaBan" Type="Double" />
+    <Property Name="XuatXu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="HinhAnh" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Created_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Created_At" Type="DateTime" Precision="3" />
+    <Property Name="Updated_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Updated_At" Type="DateTime" Precision="3" />
+    <Property Name="Removed" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Remove_Reason" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CT_HoaDonBan" Relationship="STORAGEModel.FK_CT_HoaDonBan_HangHoa" FromRole="HangHoa" ToRole="CT_HoaDonBan" />
+    <NavigationProperty Name="CT_HoaDonMua" Relationship="STORAGEModel.FK_CT_HoaDonMua_HangHoa" FromRole="HangHoa" ToRole="CT_HoaDonMua" />
+  </EntityType>
+  <EntityType Name="HoaDonBan">
+    <Key>
+      <PropertyRef Name="ID_HoaDonBan" />
+    </Key>
+    <Property Name="ID_HoaDonBan" Type="Int32" Nullable="false" />
+    <Property Name="ID_KhachHang" Type="Int32" />
+    <Property Name="NgayBan" Type="DateTime" Precision="3" />
+    <Property Name="ID_NhanVien" Type="Int32" />
+    <Property Name="ID_Kho" Type="Int32" />
+    <Property Name="Created_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Created_At" Type="DateTime" Precision="3" />
+    <Property Name="Updated_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Updated_At" Type="DateTime" Precision="3" />
+    <Property Name="Removed" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Remove_Reason" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CT_HoaDonBan" Relationship="STORAGEModel.FK_CT_HoaDonBan_HoaDonBan" FromRole="HoaDonBan" ToRole="CT_HoaDonBan" />
+    <NavigationProperty Name="KhachHang" Relationship="STORAGEModel.FK_HoaDonBan_KhachHang" FromRole="HoaDonBan" ToRole="KhachHang" />
+    <NavigationProperty Name="Kho" Relationship="STORAGEModel.FK_HoaDonBan_Kho" FromRole="HoaDonBan" ToRole="Kho" />
+    <NavigationProperty Name="NhanVien" Relationship="STORAGEModel.FK_HoaDonBan_NhanVien" FromRole="HoaDonBan" ToRole="NhanVien" />
+  </EntityType>
+  <EntityType Name="HoaDonMua">
+    <Key>
+      <PropertyRef Name="ID_HDMua" />
+    </Key>
+    <Property Name="ID_HDMua" Type="Int32" Nullable="false" />
+    <Property Name="ID_NhaCungCap" Type="Int32" />
+    <Property Name="NgayNhap" Type="DateTime" Precision="3" />
+    <Property Name="ID_NhanVien" Type="Int32" />
+    <Property Name="ID_Kho" Type="Int32" />
+    <Property Name="Created_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Created_At" Type="DateTime" Precision="3" />
+    <Property Name="Updated_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Updated_At" Type="DateTime" Precision="3" />
+    <Property Name="Removed" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Remove_Reason" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CT_HoaDonMua" Relationship="STORAGEModel.FK_CT_HoaDonMua_HoaDonMua" FromRole="HoaDonMua" ToRole="CT_HoaDonMua" />
+    <NavigationProperty Name="Kho" Relationship="STORAGEModel.FK_HoaDonMua_Kho" FromRole="HoaDonMua" ToRole="Kho" />
+    <NavigationProperty Name="NhaCungCap" Relationship="STORAGEModel.FK_HoaDonMua_NhaCungCap" FromRole="HoaDonMua" ToRole="NhaCungCap" />
+    <NavigationProperty Name="NhanVien" Relationship="STORAGEModel.FK_HoaDonMua_NhanVien" FromRole="HoaDonMua" ToRole="NhanVien" />
+  </EntityType>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="ID_KhachHang" />
+    </Key>
+    <Property Name="ID_KhachHang" Type="Int32" Nullable="false" />
+    <Property Name="Ten" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SoDienThoai" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="ChiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Created_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Created_At" Type="DateTime" Precision="3" />
+    <Property Name="Updated_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Updated_At" Type="DateTime" Precision="3" />
+    <Property Name="Removed" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Remove_Reason" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HoaDonBans" Relationship="STORAGEModel.FK_HoaDonBan_KhachHang" FromRole="KhachHang" ToRole="HoaDonBan" />
+  </EntityType>
+  <EntityType Name="Kho">
+    <Key>
+      <PropertyRef Name="ID_Kho" />
+    </Key>
+    <Property Name="ID_Kho" Type="Int32" Nullable="false" />
+    <Property Name="Ten" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SoDienThoai" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Created_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Created_At" Type="DateTime" Precision="3" />
+    <Property Name="Updated_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Updated_At" Type="DateTime" Precision="3" />
+    <Property Name="Removed" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Remove_Reason" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HoaDonBans" Relationship="STORAGEModel.FK_HoaDonBan_Kho" FromRole="Kho" ToRole="HoaDonBan" />
+    <NavigationProperty Name="HoaDonMuas" Relationship="STORAGEModel.FK_HoaDonMua_Kho" FromRole="Kho" ToRole="HoaDonMua" />
+  </EntityType>
+  <EntityType Name="NhaCungCap">
+    <Key>
+      <PropertyRef Name="ID_NhaCungCap" />
+    </Key>
+    <Property Name="ID_NhaCungCap" Type="Int32" Nullable="false" />
+    <Property Name="TenNhaCungCap" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SoDienThoai" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Created_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Created_At" Type="DateTime" Precision="3" />
+    <Property Name="Updated_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Updated_At" Type="DateTime" Precision="3" />
+    <Property Name="Removed" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Remove_Reason" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HoaDonMuas" Relationship="STORAGEModel.FK_HoaDonMua_NhaCungCap" FromRole="NhaCungCap" ToRole="HoaDonMua" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="ID_NhanVien" />
+    </Key>
+    <Property Name="ID_NhanVien" Type="Int32" Nullable="false" />
+    <Property Name="Ten" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="GioiTinh" Type="Boolean" />
+    <Property Name="QueQuan" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DienThoai" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Luong" Type="Double" />
+    <Property Name="Created_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Created_At" Type="DateTime" Precision="3" />
+    <Property Name="Updated_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Updated_At" Type="DateTime" Precision="3" />
+    <Property Name="Removed" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Remove_Reason" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Pasword" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HoaDonBans" Relationship="STORAGEModel.FK_HoaDonBan_NhanVien" FromRole="NhanVien" ToRole="HoaDonBan" />
+    <NavigationProperty Name="HoaDonMuas" Relationship="STORAGEModel.FK_HoaDonMua_NhanVien" FromRole="NhanVien" ToRole="HoaDonMua" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_CT_HoaDonBan_HangHoa">
+    <End Type="STORAGEModel.HangHoa" Role="HangHoa" Multiplicity="1" />
+    <End Type="STORAGEModel.CT_HoaDonBan" Role="CT_HoaDonBan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HangHoa">
+        <PropertyRef Name="ID_HangHoa" />
+      </Principal>
+      <Dependent Role="CT_HoaDonBan">
+        <PropertyRef Name="ID_HangHoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CT_HoaDonBan_HoaDonBan">
+    <End Type="STORAGEModel.HoaDonBan" Role="HoaDonBan" Multiplicity="1" />
+    <End Type="STORAGEModel.CT_HoaDonBan" Role="CT_HoaDonBan" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDonBan">
+        <PropertyRef Name="ID_HoaDonBan" />
+      </Principal>
+      <Dependent Role="CT_HoaDonBan">
+        <PropertyRef Name="ID_HoaDonBan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CT_HoaDonMua_HangHoa">
+    <End Type="STORAGEModel.HangHoa" Role="HangHoa" Multiplicity="1" />
+    <End Type="STORAGEModel.CT_HoaDonMua" Role="CT_HoaDonMua" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HangHoa">
+        <PropertyRef Name="ID_HangHoa" />
+      </Principal>
+      <Dependent Role="CT_HoaDonMua">
+        <PropertyRef Name="ID_HangHoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CT_HoaDonMua_HoaDonMua">
+    <End Type="STORAGEModel.HoaDonMua" Role="HoaDonMua" Multiplicity="1" />
+    <End Type="STORAGEModel.CT_HoaDonMua" Role="CT_HoaDonMua" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDonMua">
+        <PropertyRef Name="ID_HDMua" />
+      </Principal>
+      <Dependent Role="CT_HoaDonMua">
+        <PropertyRef Name="ID_HoaDonMua" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoaDonBan_KhachHang">
+    <End Type="STORAGEModel.KhachHang" Role="KhachHang" Multiplicity="0..1" />
+    <End Type="STORAGEModel.HoaDonBan" Role="HoaDonBan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="ID_KhachHang" />
+      </Principal>
+      <Dependent Role="HoaDonBan">
+        <PropertyRef Name="ID_KhachHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoaDonBan_Kho">
+    <End Type="STORAGEModel.Kho" Role="Kho" Multiplicity="0..1" />
+    <End Type="STORAGEModel.HoaDonBan" Role="HoaDonBan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kho">
+        <PropertyRef Name="ID_Kho" />
+      </Principal>
+      <Dependent Role="HoaDonBan">
+        <PropertyRef Name="ID_Kho" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoaDonBan_NhanVien">
+    <End Type="STORAGEModel.NhanVien" Role="NhanVien" Multiplicity="0..1" />
+    <End Type="STORAGEModel.HoaDonBan" Role="HoaDonBan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="ID_NhanVien" />
+      </Principal>
+      <Dependent Role="HoaDonBan">
+        <PropertyRef Name="ID_NhanVien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoaDonMua_Kho">
+    <End Type="STORAGEModel.Kho" Role="Kho" Multiplicity="0..1" />
+    <End Type="STORAGEModel.HoaDonMua" Role="HoaDonMua" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kho">
+        <PropertyRef Name="ID_Kho" />
+      </Principal>
+      <Dependent Role="HoaDonMua">
+        <PropertyRef Name="ID_Kho" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoaDonMua_NhaCungCap">
+    <End Type="STORAGEModel.NhaCungCap" Role="NhaCungCap" Multiplicity="0..1" />
+    <End Type="STORAGEModel.HoaDonMua" Role="HoaDonMua" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhaCungCap">
+        <PropertyRef Name="ID_NhaCungCap" />
+      </Principal>
+      <Dependent Role="HoaDonMua">
+        <PropertyRef Name="ID_NhaCungCap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoaDonMua_NhanVien">
+    <End Type="STORAGEModel.NhanVien" Role="NhanVien" Multiplicity="0..1" />
+    <End Type="STORAGEModel.HoaDonMua" Role="HoaDonMua" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="ID_NhanVien" />
+      </Principal>
+      <Dependent Role="HoaDonMua">
+        <PropertyRef Name="ID_NhanVien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
