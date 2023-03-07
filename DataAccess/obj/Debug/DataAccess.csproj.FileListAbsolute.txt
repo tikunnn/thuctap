@@ -1,6 +1,0 @@
-D:\workspace\InventoryManagement(TT)\InventoryManagement\DataAccess\bin\Debug\DataAccess.dll
-D:\workspace\InventoryManagement(TT)\InventoryManagement\DataAccess\bin\Debug\DataAccess.pdb
-D:\workspace\InventoryManagement(TT)\InventoryManagement\DataAccess\obj\Debug\DataAccess.csproj.AssemblyReference.cache
-D:\workspace\InventoryManagement(TT)\InventoryManagement\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
-D:\workspace\InventoryManagement(TT)\InventoryManagement\DataAccess\obj\Debug\DataAccess.dll
-D:\workspace\InventoryManagement(TT)\InventoryManagement\DataAccess\obj\Debug\DataAccess.pdb
