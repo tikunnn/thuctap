@@ -80,6 +80,7 @@ namespace InventoryManagement
                     {
                         MessageBox.Show("Đăng nhập thành công");
                         Home home = new Home(login);
+                        home.LoadName();
                         home.ShowDialog();
                     }
                     else

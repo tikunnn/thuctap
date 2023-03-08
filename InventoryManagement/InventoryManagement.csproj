@@ -59,7 +59,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\BaseDAO.cs" />
+    <Compile Include="DAO\HangDAO.cs" />
     <Compile Include="DAO\NguoiDAO.cs" />
+    <Compile Include="Forms\CommodityManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CommodityManagementForm.Designer.cs">
+      <DependentUpon>CommodityManagementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StaffManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,14 +127,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>STORAGEDbContext.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>STORAGEDbContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Xoa.cs">
       <DependentUpon>STORAGEDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\CommodityManagementForm.resx">
+      <DependentUpon>CommodityManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\StaffManagementForm.resx">
       <DependentUpon>StaffManagementForm.cs</DependentUpon>
     </EmbeddedResource>

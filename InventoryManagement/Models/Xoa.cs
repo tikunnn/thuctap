@@ -14,8 +14,17 @@ namespace InventoryManagement.Models
     
     public partial class Xoa
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Xoa()
+        {
+            this.NhanViens = new HashSet<NhanVien>();
+        }
+    
         public int ID_Xoa { get; set; }
         public string MoTa { get; set; }
         public string LyDo { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NhanVien> NhanViens { get; set; }
     }
 }

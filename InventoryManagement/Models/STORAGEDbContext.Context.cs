@@ -34,7 +34,6 @@ namespace InventoryManagement.Models
         public virtual DbSet<Kho> Khoes { get; set; }
         public virtual DbSet<NhaCungCap> NhaCungCaps { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Xoa> Xoas { get; set; }
     }
 }

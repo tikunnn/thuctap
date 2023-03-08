@@ -16,3 +16,4 @@ D:\workspace\InventoryManagement(TT)\InventoryManagement\InventoryManagement\bin
 D:\workspace\InventoryManagement(TT)\InventoryManagement\InventoryManagement\bin\Debug\EntityFramework.SqlServer.dll
 D:\workspace\InventoryManagement(TT)\InventoryManagement\InventoryManagement\bin\Debug\EntityFramework.xml
 D:\workspace\InventoryManagement(TT)\InventoryManagement\InventoryManagement\bin\Debug\EntityFramework.SqlServer.xml
+D:\workspace\InventoryManagement(TT)\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Forms.CommodityManagementForm.resources

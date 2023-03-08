@@ -10,7 +10,6 @@
     <EntitySet Name="Khoes" EntityType="STORAGEModel.Kho" />
     <EntitySet Name="NhaCungCaps" EntityType="STORAGEModel.NhaCungCap" />
     <EntitySet Name="NhanViens" EntityType="STORAGEModel.NhanVien" />
-    <EntitySet Name="sysdiagrams" EntityType="STORAGEModel.sysdiagram" />
     <EntitySet Name="Xoas" EntityType="STORAGEModel.Xoa" />
     <AssociationSet Name="FK_CT_HoaDonBan_HangHoa" Association="STORAGEModel.FK_CT_HoaDonBan_HangHoa">
       <End Role="HangHoa" EntitySet="HangHoas" />
@@ -51,6 +50,10 @@
     <AssociationSet Name="FK_HoaDonMua_NhanVien" Association="STORAGEModel.FK_HoaDonMua_NhanVien">
       <End Role="NhanVien" EntitySet="NhanViens" />
       <End Role="HoaDonMua" EntitySet="HoaDonMuas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhanVien_Xoa" Association="STORAGEModel.FK_NhanVien_Xoa">
+      <End Role="Xoa" EntitySet="Xoas" />
+      <End Role="NhanVien" EntitySet="NhanViens" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="CT_HoaDonBan">
@@ -209,24 +212,16 @@
     <Property Name="ID_Xoa" Type="Int32" />
     <NavigationProperty Name="HoaDonBans" Relationship="STORAGEModel.FK_HoaDonBan_NhanVien" FromRole="NhanVien" ToRole="HoaDonBan" />
     <NavigationProperty Name="HoaDonMuas" Relationship="STORAGEModel.FK_HoaDonMua_NhanVien" FromRole="NhanVien" ToRole="HoaDonMua" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Xoa" Relationship="STORAGEModel.FK_NhanVien_Xoa" FromRole="NhanVien" ToRole="Xoa" />
   </EntityType>
   <EntityType Name="Xoa">
     <Key>
       <PropertyRef Name="ID_Xoa" />
     </Key>
-    <Property Name="ID_Xoa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Xoa" Type="Int32" Nullable="false" />
     <Property Name="MoTa" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="LyDo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NhanViens" Relationship="STORAGEModel.FK_NhanVien_Xoa" FromRole="Xoa" ToRole="NhanVien" />
   </EntityType>
   <Association Name="FK_CT_HoaDonBan_HangHoa">
     <End Type="STORAGEModel.HangHoa" Role="HangHoa" Multiplicity="1" />
@@ -345,6 +340,18 @@
       </Principal>
       <Dependent Role="HoaDonMua">
         <PropertyRef Name="ID_NhanVien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhanVien_Xoa">
+    <End Type="STORAGEModel.Xoa" Role="Xoa" Multiplicity="0..1" />
+    <End Type="STORAGEModel.NhanVien" Role="NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Xoa">
+        <PropertyRef Name="ID_Xoa" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="ID_Xoa" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

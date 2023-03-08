@@ -137,21 +137,11 @@
     <Property Name="Pasword" Type="nvarchar" MaxLength="200" />
     <Property Name="ID Xoa" Type="int" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <EntityType Name="Xoa">
     <Key>
       <PropertyRef Name="ID Xoa" />
     </Key>
-    <Property Name="ID Xoa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID Xoa" Type="int" Nullable="false" />
     <Property Name="MoTa" Type="nvarchar" MaxLength="500" />
     <Property Name="LyDo" Type="nvarchar" MaxLength="500" />
   </EntityType>
@@ -275,6 +265,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_NhanVien_Xoa">
+    <End Role="Xoa" Type="Self.Xoa" Multiplicity="0..1" />
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Xoa">
+        <PropertyRef Name="ID Xoa" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="ID Xoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="STORAGEModelStoreContainer">
     <EntitySet Name="CT_HoaDonBan" EntityType="Self.CT_HoaDonBan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CT_HoaDonMua" EntityType="Self.CT_HoaDonMua" Schema="dbo" store:Type="Tables" />
@@ -285,7 +287,6 @@
     <EntitySet Name="Kho" EntityType="Self.Kho" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NhaCungCap" EntityType="Self.NhaCungCap" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Xoa" EntityType="Self.Xoa" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_CT_HoaDonBan_HangHoa" Association="Self.FK_CT_HoaDonBan_HangHoa">
       <End Role="HangHoa" EntitySet="HangHoa" />
@@ -326,6 +327,10 @@
     <AssociationSet Name="FK_HoaDonMua_NhanVien" Association="Self.FK_HoaDonMua_NhanVien">
       <End Role="NhanVien" EntitySet="NhanVien" />
       <End Role="HoaDonMua" EntitySet="HoaDonMua" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhanVien_Xoa" Association="Self.FK_NhanVien_Xoa">
+      <End Role="Xoa" EntitySet="Xoa" />
+      <End Role="NhanVien" EntitySet="NhanVien" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

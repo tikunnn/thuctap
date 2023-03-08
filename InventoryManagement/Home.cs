@@ -57,5 +57,16 @@ namespace InventoryManagement
                 login.ShowDialog();
             }
         }
+
+        public void LoadName()
+        {
+            var dao = new STORAGEEntities();
+            lbUserName.Text = _nhanvien.Ten;
+        }
+
+        private void btnCommodityManagement_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.CommodityManagementForm(), sender);
+        }
     }
 }
