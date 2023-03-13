@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,12 +47,16 @@
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiDeleteCommodity = new System.Windows.Forms.ToolStripMenuItem();
             this.btnChoosePicture = new System.Windows.Forms.Button();
             this.btnDefault = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +74,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label2.Location = new System.Drawing.Point(33, 61);
+            this.label2.Location = new System.Drawing.Point(33, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 18);
             this.label2.TabIndex = 1;
@@ -109,6 +114,7 @@
             // 
             this.pbPicture.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pbPicture.Location = new System.Drawing.Point(723, 30);
+            this.pbPicture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbPicture.Name = "pbPicture";
             this.pbPicture.Size = new System.Drawing.Size(213, 198);
             this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -118,37 +124,42 @@
             // tbID
             // 
             this.tbID.Location = new System.Drawing.Point(149, 30);
+            this.tbID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbID.Name = "tbID";
-            this.tbID.Size = new System.Drawing.Size(530, 22);
-            this.tbID.TabIndex = 3;
+            this.tbID.Size = new System.Drawing.Size(529, 22);
+            this.tbID.TabIndex = 0;
             // 
             // tbCommodityName
             // 
             this.tbCommodityName.Location = new System.Drawing.Point(149, 58);
+            this.tbCommodityName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbCommodityName.Name = "tbCommodityName";
-            this.tbCommodityName.Size = new System.Drawing.Size(530, 22);
-            this.tbCommodityName.TabIndex = 3;
+            this.tbCommodityName.Size = new System.Drawing.Size(529, 22);
+            this.tbCommodityName.TabIndex = 1;
             // 
             // tbOrigin
             // 
-            this.tbOrigin.Location = new System.Drawing.Point(149, 88);
+            this.tbOrigin.Location = new System.Drawing.Point(149, 89);
+            this.tbOrigin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbOrigin.Name = "tbOrigin";
-            this.tbOrigin.Size = new System.Drawing.Size(530, 22);
-            this.tbOrigin.TabIndex = 3;
+            this.tbOrigin.Size = new System.Drawing.Size(529, 22);
+            this.tbOrigin.TabIndex = 2;
             // 
             // tbUnit
             // 
             this.tbUnit.Location = new System.Drawing.Point(149, 117);
+            this.tbUnit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbUnit.Name = "tbUnit";
-            this.tbUnit.Size = new System.Drawing.Size(530, 22);
+            this.tbUnit.Size = new System.Drawing.Size(529, 22);
             this.tbUnit.TabIndex = 3;
             // 
             // tbExportPrice
             // 
             this.tbExportPrice.Location = new System.Drawing.Point(149, 145);
+            this.tbExportPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbExportPrice.Name = "tbExportPrice";
-            this.tbExportPrice.Size = new System.Drawing.Size(530, 22);
-            this.tbExportPrice.TabIndex = 3;
+            this.tbExportPrice.Size = new System.Drawing.Size(529, 22);
+            this.tbExportPrice.TabIndex = 4;
             // 
             // lvCommodity
             // 
@@ -159,16 +170,19 @@
             this.columnHeader10,
             this.columnHeader11,
             this.columnHeader12});
+            this.lvCommodity.ContextMenuStrip = this.contextMenuStrip1;
             this.lvCommodity.FullRowSelect = true;
             this.lvCommodity.GridLines = true;
             this.lvCommodity.HideSelection = false;
             this.lvCommodity.Location = new System.Drawing.Point(36, 295);
+            this.lvCommodity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvCommodity.Name = "lvCommodity";
             this.lvCommodity.Size = new System.Drawing.Size(900, 461);
-            this.lvCommodity.TabIndex = 4;
+            this.lvCommodity.TabIndex = 9;
             this.lvCommodity.UseCompatibleStateImageBehavior = false;
             this.lvCommodity.View = System.Windows.Forms.View.Details;
             this.lvCommodity.Click += new System.EventHandler(this.lvCommodity_Click);
+            this.lvCommodity.DoubleClick += new System.EventHandler(this.lvCommodity_DoubleClick);
             // 
             // columnHeader7
             // 
@@ -199,9 +213,25 @@
             this.columnHeader12.Text = "Giá xuất";
             this.columnHeader12.Width = 90;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiDeleteCommodity});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(171, 28);
+            // 
+            // tsmiDeleteCommodity
+            // 
+            this.tsmiDeleteCommodity.Name = "tsmiDeleteCommodity";
+            this.tsmiDeleteCommodity.Size = new System.Drawing.Size(170, 24);
+            this.tsmiDeleteCommodity.Text = "Xóa hàng hóa";
+            this.tsmiDeleteCommodity.Click += new System.EventHandler(this.tsmiDeleteCommodity_Click);
+            // 
             // btnChoosePicture
             // 
             this.btnChoosePicture.Location = new System.Drawing.Point(787, 239);
+            this.btnChoosePicture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnChoosePicture.Name = "btnChoosePicture";
             this.btnChoosePicture.Size = new System.Drawing.Size(95, 37);
             this.btnChoosePicture.TabIndex = 5;
@@ -211,47 +241,71 @@
             // 
             // btnDefault
             // 
+            this.btnDefault.BackColor = System.Drawing.Color.Lavender;
+            this.btnDefault.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDefault.Location = new System.Drawing.Point(197, 182);
+            this.btnDefault.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDefault.Name = "btnDefault";
             this.btnDefault.Size = new System.Drawing.Size(144, 37);
-            this.btnDefault.TabIndex = 6;
-            this.btnDefault.Text = "Mặc định";
-            this.btnDefault.UseVisualStyleBackColor = true;
+            this.btnDefault.TabIndex = 7;
+            this.btnDefault.Text = "Làm mới";
+            this.btnDefault.UseVisualStyleBackColor = false;
             this.btnDefault.Click += new System.EventHandler(this.btnDefault_Click);
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.LightGreen;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSave.Location = new System.Drawing.Point(36, 182);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(144, 37);
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Lưu";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // tbSearch
             // 
-            this.tbSearch.Location = new System.Drawing.Point(6, 21);
+            this.tbSearch.Location = new System.Drawing.Point(5, 21);
+            this.tbSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSearch.Multiline = true;
             this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(637, 28);
-            this.tbSearch.TabIndex = 7;
+            this.tbSearch.Size = new System.Drawing.Size(637, 29);
+            this.tbSearch.TabIndex = 8;
             this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tbSearch);
             this.groupBox1.Location = new System.Drawing.Point(36, 225);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Size = new System.Drawing.Size(652, 64);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpdate.Location = new System.Drawing.Point(361, 182);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(144, 37);
+            this.btnUpdate.TabIndex = 10;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // CommodityManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(968, 768);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDefault);
@@ -269,11 +323,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CommodityManagementForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CommodityManagementForm";
             this.Load += new System.EventHandler(this.CommodityManagementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -306,5 +362,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.TextBox tbSearch;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDeleteCommodity;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

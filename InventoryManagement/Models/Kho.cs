@@ -35,5 +35,6 @@ namespace InventoryManagement.Models
         public virtual ICollection<HoaDonBan> HoaDonBans { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDonMua> HoaDonMuas { get; set; }
+        public virtual Xoa Xoa { get; set; }
     }
 }

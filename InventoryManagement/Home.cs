@@ -28,7 +28,7 @@ namespace InventoryManagement
         public Home home;
 
 
-        private void OpenChildForm(Form childForm, object btnSender)
+        public void OpenChildForm(Form childForm, object btnSender)
         {
             if (activeForm != null)
             {
@@ -45,7 +45,7 @@ namespace InventoryManagement
 
         private void btnStaffManagement_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.StaffManagementForm(), sender);
+            OpenChildForm(new Forms.StaffManagementForm(_nhanvien), sender);
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -60,13 +60,17 @@ namespace InventoryManagement
 
         public void LoadName()
         {
-            var dao = new STORAGEEntities();
             lbUserName.Text = _nhanvien.Ten;
         }
 
         private void btnCommodityManagement_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.CommodityManagementForm(), sender);
+            OpenChildForm(new Forms.CommodityManagementForm(_nhanvien), sender);
+        }
+
+        private void btnSpendingManagement_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.SpendingManagementForm(), sender);
         }
     }
 }

@@ -26,5 +26,6 @@ namespace InventoryManagement.Models
     
         public virtual HangHoa HangHoa { get; set; }
         public virtual HoaDonBan HoaDonBan { get; set; }
+        public virtual Xoa Xoa { get; set; }
     }
 }

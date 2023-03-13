@@ -1,4 +1,5 @@
 ﻿using InventoryManagement.DAO;
+using InventoryManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,13 +15,14 @@ namespace InventoryManagement
 {
     public partial class Login : Form
     {
+        NhanVien _nhanvien;
         public Login()
         {
             InitializeComponent();
             SetUpPlaceHolder();
         }
 
-        private const string PlaceHolderTextUser = "Tên tài khoản";
+        private const string PlaceHolderTextUser = "user1";
         //private const string PlaceHolderTextPass = "";
 
 
@@ -78,7 +80,6 @@ namespace InventoryManagement
                 {
                     if (login != null)
                     {
-                        MessageBox.Show("Đăng nhập thành công");
                         Home home = new Home(login);
                         home.LoadName();
                         home.ShowDialog();
@@ -90,11 +91,23 @@ namespace InventoryManagement
                 }
                 
             }
-            catch
+            
+            catch(Exception ex) 
             {
                 MessageBox.Show("Lỗi kết nối");
             }
         }
 
+        private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbShowPassword.Checked)
+            {
+                tbPass.PasswordChar = '\0';
+            }
+            else
+            {
+                tbPass.PasswordChar = '*';
+            }
+        }
     }
 }
