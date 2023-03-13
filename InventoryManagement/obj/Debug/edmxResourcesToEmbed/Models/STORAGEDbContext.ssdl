@@ -37,7 +37,7 @@
     <Property Name="DonViTinh" Type="nvarchar" MaxLength="50" />
     <Property Name="GiaBan" Type="float" />
     <Property Name="XuatXu" Type="nvarchar" MaxLength="200" />
-    <Property Name="HinhAnh" Type="varchar" MaxLength="100" />
+    <Property Name="HinhAnh" Type="image" />
     <Property Name="Created_By" Type="nvarchar" MaxLength="200" />
     <Property Name="Created_At" Type="datetime" />
     <Property Name="Updated_By" Type="nvarchar" MaxLength="200" />
@@ -82,7 +82,7 @@
     <Property Name="Ten" Type="nvarchar" MaxLength="200" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="500" />
     <Property Name="SoDienThoai" Type="nchar" MaxLength="50" />
-    <Property Name="ChiChu" Type="nvarchar" MaxLength="500" />
+    <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
     <Property Name="Created_By" Type="nvarchar" MaxLength="200" />
     <Property Name="Created_At" Type="datetime" />
     <Property Name="Updated_By" Type="nvarchar" MaxLength="200" />
@@ -141,7 +141,7 @@
     <Key>
       <PropertyRef Name="ID Xoa" />
     </Key>
-    <Property Name="ID Xoa" Type="int" Nullable="false" />
+    <Property Name="ID Xoa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MoTa" Type="nvarchar" MaxLength="500" />
     <Property Name="LyDo" Type="nvarchar" MaxLength="500" />
   </EntityType>
@@ -169,6 +169,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_CT_HoaDonBan_Xoa">
+    <End Role="Xoa" Type="Self.Xoa" Multiplicity="0..1" />
+    <End Role="CT_HoaDonBan" Type="Self.CT_HoaDonBan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Xoa">
+        <PropertyRef Name="ID Xoa" />
+      </Principal>
+      <Dependent Role="CT_HoaDonBan">
+        <PropertyRef Name="ID Xoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_CT_HoaDonMua_HangHoa">
     <End Role="HangHoa" Type="Self.HangHoa" Multiplicity="1" />
     <End Role="CT_HoaDonMua" Type="Self.CT_HoaDonMua" Multiplicity="*" />
@@ -190,6 +202,30 @@
       </Principal>
       <Dependent Role="CT_HoaDonMua">
         <PropertyRef Name="ID HoaDonMua" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CT_HoaDonMua_Xoa">
+    <End Role="Xoa" Type="Self.Xoa" Multiplicity="0..1" />
+    <End Role="CT_HoaDonMua" Type="Self.CT_HoaDonMua" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Xoa">
+        <PropertyRef Name="ID Xoa" />
+      </Principal>
+      <Dependent Role="CT_HoaDonMua">
+        <PropertyRef Name="ID Xoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HangHoa_Xoa">
+    <End Role="Xoa" Type="Self.Xoa" Multiplicity="0..1" />
+    <End Role="HangHoa" Type="Self.HangHoa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Xoa">
+        <PropertyRef Name="ID Xoa" />
+      </Principal>
+      <Dependent Role="HangHoa">
+        <PropertyRef Name="ID Xoa" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -229,6 +265,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_HoaDonBan_Xoa">
+    <End Role="Xoa" Type="Self.Xoa" Multiplicity="0..1" />
+    <End Role="HoaDonBan" Type="Self.HoaDonBan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Xoa">
+        <PropertyRef Name="ID Xoa" />
+      </Principal>
+      <Dependent Role="HoaDonBan">
+        <PropertyRef Name="ID Xoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_HoaDonMua_Kho">
     <End Role="Kho" Type="Self.Kho" Multiplicity="0..1" />
     <End Role="HoaDonMua" Type="Self.HoaDonMua" Multiplicity="*" />
@@ -265,6 +313,54 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_HoaDonMua_Xoa">
+    <End Role="Xoa" Type="Self.Xoa" Multiplicity="0..1" />
+    <End Role="HoaDonMua" Type="Self.HoaDonMua" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Xoa">
+        <PropertyRef Name="ID Xoa" />
+      </Principal>
+      <Dependent Role="HoaDonMua">
+        <PropertyRef Name="ID Xoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KhachHang_Xoa">
+    <End Role="Xoa" Type="Self.Xoa" Multiplicity="0..1" />
+    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Xoa">
+        <PropertyRef Name="ID Xoa" />
+      </Principal>
+      <Dependent Role="KhachHang">
+        <PropertyRef Name="ID Xoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kho_Xoa">
+    <End Role="Xoa" Type="Self.Xoa" Multiplicity="0..1" />
+    <End Role="Kho" Type="Self.Kho" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Xoa">
+        <PropertyRef Name="ID Xoa" />
+      </Principal>
+      <Dependent Role="Kho">
+        <PropertyRef Name="ID Xoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhaCungCap_Xoa">
+    <End Role="Xoa" Type="Self.Xoa" Multiplicity="0..1" />
+    <End Role="NhaCungCap" Type="Self.NhaCungCap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Xoa">
+        <PropertyRef Name="ID Xoa" />
+      </Principal>
+      <Dependent Role="NhaCungCap">
+        <PropertyRef Name="ID Xoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_NhanVien_Xoa">
     <End Role="Xoa" Type="Self.Xoa" Multiplicity="0..1" />
     <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
@@ -296,6 +392,10 @@
       <End Role="HoaDonBan" EntitySet="HoaDonBan" />
       <End Role="CT_HoaDonBan" EntitySet="CT_HoaDonBan" />
     </AssociationSet>
+    <AssociationSet Name="FK_CT_HoaDonBan_Xoa" Association="Self.FK_CT_HoaDonBan_Xoa">
+      <End Role="Xoa" EntitySet="Xoa" />
+      <End Role="CT_HoaDonBan" EntitySet="CT_HoaDonBan" />
+    </AssociationSet>
     <AssociationSet Name="FK_CT_HoaDonMua_HangHoa" Association="Self.FK_CT_HoaDonMua_HangHoa">
       <End Role="HangHoa" EntitySet="HangHoa" />
       <End Role="CT_HoaDonMua" EntitySet="CT_HoaDonMua" />
@@ -303,6 +403,14 @@
     <AssociationSet Name="FK_CT_HoaDonMua_HoaDonMua" Association="Self.FK_CT_HoaDonMua_HoaDonMua">
       <End Role="HoaDonMua" EntitySet="HoaDonMua" />
       <End Role="CT_HoaDonMua" EntitySet="CT_HoaDonMua" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_HoaDonMua_Xoa" Association="Self.FK_CT_HoaDonMua_Xoa">
+      <End Role="Xoa" EntitySet="Xoa" />
+      <End Role="CT_HoaDonMua" EntitySet="CT_HoaDonMua" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HangHoa_Xoa" Association="Self.FK_HangHoa_Xoa">
+      <End Role="Xoa" EntitySet="Xoa" />
+      <End Role="HangHoa" EntitySet="HangHoa" />
     </AssociationSet>
     <AssociationSet Name="FK_HoaDonBan_KhachHang" Association="Self.FK_HoaDonBan_KhachHang">
       <End Role="KhachHang" EntitySet="KhachHang" />
@@ -316,6 +424,10 @@
       <End Role="NhanVien" EntitySet="NhanVien" />
       <End Role="HoaDonBan" EntitySet="HoaDonBan" />
     </AssociationSet>
+    <AssociationSet Name="FK_HoaDonBan_Xoa" Association="Self.FK_HoaDonBan_Xoa">
+      <End Role="Xoa" EntitySet="Xoa" />
+      <End Role="HoaDonBan" EntitySet="HoaDonBan" />
+    </AssociationSet>
     <AssociationSet Name="FK_HoaDonMua_Kho" Association="Self.FK_HoaDonMua_Kho">
       <End Role="Kho" EntitySet="Kho" />
       <End Role="HoaDonMua" EntitySet="HoaDonMua" />
@@ -327,6 +439,22 @@
     <AssociationSet Name="FK_HoaDonMua_NhanVien" Association="Self.FK_HoaDonMua_NhanVien">
       <End Role="NhanVien" EntitySet="NhanVien" />
       <End Role="HoaDonMua" EntitySet="HoaDonMua" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDonMua_Xoa" Association="Self.FK_HoaDonMua_Xoa">
+      <End Role="Xoa" EntitySet="Xoa" />
+      <End Role="HoaDonMua" EntitySet="HoaDonMua" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KhachHang_Xoa" Association="Self.FK_KhachHang_Xoa">
+      <End Role="Xoa" EntitySet="Xoa" />
+      <End Role="KhachHang" EntitySet="KhachHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kho_Xoa" Association="Self.FK_Kho_Xoa">
+      <End Role="Xoa" EntitySet="Xoa" />
+      <End Role="Kho" EntitySet="Kho" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhaCungCap_Xoa" Association="Self.FK_NhaCungCap_Xoa">
+      <End Role="Xoa" EntitySet="Xoa" />
+      <End Role="NhaCungCap" EntitySet="NhaCungCap" />
     </AssociationSet>
     <AssociationSet Name="FK_NhanVien_Xoa" Association="Self.FK_NhanVien_Xoa">
       <End Role="Xoa" EntitySet="Xoa" />

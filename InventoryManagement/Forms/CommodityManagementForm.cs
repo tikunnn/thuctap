@@ -1,10 +1,13 @@
 ﻿using InventoryManagement.DAO;
 using InventoryManagement.Models;
+using InventoryManagement.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -16,7 +19,19 @@ namespace InventoryManagement.Forms
     public partial class CommodityManagementForm : Form
     {
         List<HangHoa> dsHangHoa;
+        private NhanVien _nhanvien;
         string imgLocation = "";
+        byte[] img = null;
+        NhanVien nvCurrent = new NhanVien();
+
+        private HangHoa _hanghoa;
+        HangHoa hhCurrent = new HangHoa();
+
+        public CommodityManagementForm(NhanVien nhanvien)
+        {
+            InitializeComponent();
+            _nhanvien = nhanvien;
+        }
         public CommodityManagementForm()
         {
             InitializeComponent();
@@ -43,6 +58,7 @@ namespace InventoryManagement.Forms
                 item.SubItems.Add(hh.XuatXu);
                 item.SubItems.Add(hh.DonViTinh);
                 item.SubItems.Add(hh.GiaBan.ToString());
+
 
                 count++;
             }
@@ -83,6 +99,7 @@ namespace InventoryManagement.Forms
 
         private void lvCommodity_Click(object sender, EventArgs e)
         {
+            btnSave.Enabled = false;
             for (int i = 0; i < lvCommodity.Items.Count; i++)
             {
                 if (lvCommodity.Items[i].Selected)
@@ -94,6 +111,17 @@ namespace InventoryManagement.Forms
                     tbOrigin.Text = hhCurrent.XuatXu;
                     tbUnit.Text = hhCurrent.DonViTinh;
                     tbExportPrice.Text = hhCurrent.GiaBan.ToString();
+
+                    if (hhCurrent.HinhAnh == null)
+                    {
+                        pbPicture.Image = null;
+                    }
+                    else
+                    {
+                        MemoryStream ms = new MemoryStream(hhCurrent.HinhAnh);
+                        pbPicture.Image = Image.FromStream(ms);
+
+                    }
                 }
             }
         }
@@ -118,6 +146,145 @@ namespace InventoryManagement.Forms
 
                 lvCommodity.Items.Add(item);
             }
+        }
+        
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            InsertHangHoa();
+            LoadHangHoa();
+        }
+
+        private int InsertHangHoa()
+        {
+            var dao = new HangDAO();
+
+            HangHoa hh = new HangHoa();
+            if (tbCommodityName.Text == "" || tbOrigin.Text == "" || tbUnit.Text == "" || tbExportPrice.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+            }
+            else
+            {
+                hh.ID_HangHoa = Convert.ToInt32(tbID.Text);
+                hh.Ten = tbCommodityName.Text;
+                hh.XuatXu = tbOrigin.Text;
+                hh.DonViTinh = tbUnit.Text;
+                hh.GiaBan = Convert.ToInt32(tbExportPrice.Text);
+                hh.Created_By = _nhanvien.Ten;
+                hh.Created_At = DateTime.Now;
+                
+
+                if (pbPicture.Image == null)
+                {
+                    FileStream file = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                    BinaryReader binary = new BinaryReader(file);
+
+                    img = binary.ReadBytes((int)file.Length);
+                    hh.HinhAnh = img;
+                    MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return dao.InsertUpdate(hh);
+                }
+                //else
+                //{
+                //    hh.HinhAnh = ImageToByteArray(pbPicture.Image);
+                //    MessageBox.Show("Cập nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //    return dao.InsertUpdate(hh);
+                //}
+            }
+            return -1;
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            UpdateHangHoa();
+            LoadHangHoa();
+        }
+        private int UpdateHangHoa()
+        {
+            var dao = new HangDAO();
+
+            HangHoa hh = new HangHoa();
+            if (tbCommodityName.Text == "" || tbOrigin.Text == "" || tbUnit.Text == "" || tbExportPrice.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+            }
+            else
+            {
+                hh.ID_HangHoa = Convert.ToInt32(tbID.Text);
+                hh.Ten = tbCommodityName.Text;
+                hh.XuatXu = tbOrigin.Text;
+                hh.DonViTinh = tbUnit.Text;
+                hh.GiaBan = Convert.ToInt32(tbExportPrice.Text);
+                hh.Created_By = nvCurrent.Ten;
+                hh.Created_At = nvCurrent.Created_At;
+                hh.Updated_By = _nhanvien.Ten;
+                hh.Updated_At = DateTime.Now;
+
+                //if (pbPicture.Image == null)
+                //{
+                //    FileStream file = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                //    BinaryReader binary = new BinaryReader(file);
+
+                //    img = binary.ReadBytes((int)file.Length);
+                //    hh.HinhAnh = img;
+                //    MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //    return dao.InsertUpdate(hh);
+                //}
+                //else
+                //{
+                //    hh.HinhAnh = ImageToByteArray(pbPicture.Image);
+                //    MessageBox.Show("Cập nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //    return dao.InsertUpdate(hh);
+                //}
+
+                if (pbPicture.Image != null)
+                {
+                    hh.HinhAnh = ImageToByteArray(pbPicture.Image);
+                    MessageBox.Show("Cập nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return dao.InsertUpdate(hh);
+                }
+            }
+            return -1;
+        }
+
+
+        public byte[] ImageToByteArray(System.Drawing.Image img)
+        {
+            ImageConverter converter = new ImageConverter();
+            return (byte[])converter.ConvertTo(img, typeof(byte[]));
+        }
+
+        private void tsmiDeleteCommodity_Click(object sender, EventArgs e)
+        {
+            var dao = new HangDAO();
+
+            if (MessageBox.Show("Bạn có muốn xóa mặt hàng này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                for (int i = 0; i < lvCommodity.Items.Count; i++)
+                {
+                    if (lvCommodity.Items[i].Selected)
+                    {
+                        dao.Delete_ID(dsHangHoa[i].ID_HangHoa);
+                        MessageBox.Show("Xóa mặt hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadHangHoa();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng thử lại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void lvCommodity_DoubleClick(object sender, EventArgs e)
+        {
+            for (int i = 0; i < lvCommodity.Items.Count; i++)
+            {
+                if (lvCommodity.Items[i].Selected)
+                    hhCurrent = dsHangHoa[i];
+            }
+            CommodityDetails details = new CommodityDetails(hhCurrent);
+            details.ShowDialog();
         }
     }
 }

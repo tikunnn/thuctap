@@ -1,6 +1,7 @@
 ﻿using InventoryManagement.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,55 +11,11 @@ namespace InventoryManagement.DAO
     public class HangDAO : BaseDAO
     {
         public HangDAO() { } 
-        public STORAGEEntities GetContext()
-        {
-            return new STORAGEEntities();
-        }
 
         public List<HangHoa> GetAll_HangHoa()
         {
-            using (var db = new STORAGEEntities())
-            {
-                var ls = db.HangHoas.AsQueryable();
-                if (ls != null & ls.Any())
-                    return ls.ToList();
-                return new List<HangHoa>();
-            }
+            return _connect.HangHoas.ToList();
         }
-
-        //public List<HangHoa> Find_KeyWord(string Keyword)
-        //{
-        //    using (var db = new STORAGEEntities())
-        //    {
-        //        if (!string.IsNullOrWhiteSpace(Keyword))
-        //        {
-        //            var obj = db.HangHoas.FirstOrDefault(s => s.ID_HangHoa.ToString().CompareTo(Keyword) == 0);
-        //            if (obj != null)
-        //            {
-        //                List<HangHoa> ls = new List<HangHoa>();
-        //                ls.Add(obj);
-        //                return ls;
-        //            }
-        //            var list = db.HangHoas.AsQueryable();
-        //            list = list.Where(s => s.ID_HangHoa.ToString().Contains(Keyword)
-        //            || s.Ten.ToLower().Contains(Keyword)
-        //            );
-        //            if (list != null && list.Any())
-        //            {
-        //                return list.OrderByDescending(s => s.ID_HangHoa).ToList();
-        //            }
-        //        }
-        //        else
-        //        {
-        //            var list = db.HangHoas.AsQueryable();
-        //            if (list != null && list.Any())
-        //            {
-        //                return list.OrderByDescending(s => s.ID_HangHoa).ToList();
-        //            }
-        //        }
-        //        return new List<HangHoa>();
-        //    }
-        //}
 
         public List<HangHoa> Search(string key)
         {
@@ -75,6 +32,37 @@ namespace InventoryManagement.DAO
                     result.Add(item);
             }
             return result;
+        }
+        #region insert & update
+        public int InsertUpdate(HangHoa item)
+        {
+            using ( var db = new STORAGEEntities())
+            {
+                using (var db1 = new STORAGEEntities())
+                {
+                    var find = db.HangHoas.FirstOrDefault(x => x.ID_HangHoa == item.ID_HangHoa);
+                    if (find != null)
+                        db1.Entry(item).State = EntityState.Modified;
+                    else
+                        item = db1.HangHoas.Add(item);
+                    db1.SaveChanges();
+                    return item.ID_HangHoa;
+                }
+            }
+        }
+        #endregion
+
+        public void Delete_ID(int id)
+        {
+            using (var db = new STORAGEEntities())
+            {
+                var obj = db.HangHoas.FirstOrDefault(x => x.ID_HangHoa == id);
+                if (obj != null)
+                {
+                    db.HangHoas.Remove(obj);
+                    db.SaveChanges();
+                }
+            }
         }
     }
 }

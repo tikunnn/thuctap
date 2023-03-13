@@ -15,14 +15,18 @@ namespace InventoryManagement.Forms
 {
     public partial class StaffManagementForm : Form
     {
+        private NhanVien _nhanvien;
         List<NhanVien> dsNhanVien;
+        NhanVien nvCurrent = new NhanVien();
+        public StaffManagementForm(NhanVien nhanvien)
+        {
+            InitializeComponent();
+            _nhanvien = nhanvien;
+        }
         public StaffManagementForm()
         {
             InitializeComponent();
         }
-
-        
-
         private void StaffManagementForm_Load(object sender, EventArgs e)
         {
             LoadNhanVien();
@@ -42,7 +46,7 @@ namespace InventoryManagement.Forms
                 item.SubItems.Add(nhanvien.ID_NhanVien.ToString());
                 item.SubItems.Add(nhanvien.Ten);
                 item.SubItems.Add(nhanvien.NgaySinh.ToString());
-                item.SubItems.Add(nhanvien.GioiTinh.ToString());
+                item.SubItems.Add(nhanvien.GioiTinh == false ? "Nam" : "Nữ");
                 item.SubItems.Add(nhanvien.DienThoai);
                 item.SubItems.Add(nhanvien.DiaChi);
                 item.SubItems.Add(nhanvien.Luong.ToString());
@@ -54,10 +58,26 @@ namespace InventoryManagement.Forms
                 item.SubItems.Add(nhanvien.Pasword);
                 count++;
             }
+            #region DataGridView
+            //var dao = new NguoiDAO();
+            //var nhanvien = dao.GetAll_NhanVien().Select(x => new{
+            //    x.ID_NhanVien,
+            //    x.Ten,
+            //    x.NgaySinh,
+            //    x.GioiTinh,
+            //    x.DienThoai,
+            //    x.DiaChi,
+            //    x.Luong,
+            //    x.UserName,
+            //    x.Pasword
+            //}).ToList();
+            //dgvUser.DataSource = nhanvien;
+            #endregion
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            btnAdd.Enabled = true;
             this.tbID.Text = "";
             this.tbName.Text = "";
             this.dtpBirthDay.Text = "";
@@ -75,17 +95,16 @@ namespace InventoryManagement.Forms
 
         private void lvUser_Click(object sender, EventArgs e)
         {
-            //btnAdd.Enabled = false;
+            btnAdd.Enabled = false;
             for (int i = 0; i < lvUser.Items.Count; i++)
             {
                 if (lvUser.Items[i].Selected)
                 {
-                    NhanVien nvCurrent = new NhanVien();
                     nvCurrent = dsNhanVien[i];
                     tbID.Text = nvCurrent.ID_NhanVien.ToString();
                     tbName.Text = nvCurrent.Ten;
                     dtpBirthDay.Text = nvCurrent.NgaySinh.ToString();
-                    cbbGender.Text = nvCurrent.GioiTinh.ToString();
+                    cbbGender.Text = nvCurrent.GioiTinh == false ? "Nam" : "Nữ";
                     tbSalary.Text = nvCurrent.Luong.ToString();
                     tbPhoneNumber.Text = nvCurrent.DienThoai;
                     tbAddress.Text = nvCurrent.DiaChi;
@@ -98,48 +117,87 @@ namespace InventoryManagement.Forms
                 }
             }
         }
-
+        #region Insert Update Delete
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            int insert = InsertUpdateStaff();
-
-            if (insert > 0)
-            {
-                MessageBox.Show("Thêm dữ liệu thành công");
-                LoadNhanVien();
-            }
-            else
-            {
-                MessageBox.Show("Cập nhật thành công");
-                LoadNhanVien();
-            }    
+            InsertStaff();
+            LoadNhanVien();
         }
 
-        private int InsertUpdateStaff()
+        private int InsertStaff()
         {
             NhanVien obj = new NhanVien();
             //obj.ID_NhanVien = 0;
 
-            if (tbName.Text == "" || dtpBirthDay.Text == ""  )
-                //|| cbbGender.Text == "" || tbSalary.Text == "" || tbPhoneNumber.Text == "" 
-                //|| tbAddress.Text == "" || tbAccount.Text == "" || tbPassword.Text == ""
+            if (tbName.Text == "" || dtpBirthDay.Text == "" || cbbGender.Text == "" || tbSalary.Text == "" || tbPhoneNumber.Text == ""
+                || tbAddress.Text == "" || tbAccount.Text == "" || tbPassword.Text == "")
             {
-                MessageBox.Show("Yêu cầu nhập đầy đủ thông tin");
-            } 
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+            }
             else
             {
                 obj.ID_NhanVien = Convert.ToInt32(tbID.Text);
                 obj.Ten = tbName.Text;
-                //obj.NgaySinh = DateTime.Now;
-                //if (cbbGender.SelectedIndex == 0)
-                //    obj.GioiTinh = false;
-                //else
-                //    obj.GioiTinh = true;
+                obj.NgaySinh = dtpBirthDay.Value;
+                if (cbbGender.SelectedIndex == 0)
+                    obj.GioiTinh = false;
+                else
+                    obj.GioiTinh = true;
+                obj.DienThoai = tbPhoneNumber.Text;
+                obj.DiaChi = tbAddress.Text;
+                obj.Luong = Convert.ToInt32(tbSalary.Text);
+                obj.UserName = tbAccount.Text;
+                obj.Pasword = tbPassword.Text;
+                obj.Created_By = _nhanvien.Ten;
+                obj.Created_At = DateTime.Now;
+                //obj.Updated_By = _nhanvien.Ten;
+                //obj.Updated_At = DateTime.Now;
 
+                var dao = new NguoiDAO();
+                MessageBox.Show("Lưu dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return dao.InsertUpdate(obj);
+            }
+            return -1;
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            UpdateStaff();
+            
+            LoadNhanVien();
+        }
+        private int UpdateStaff()
+        {
+            NhanVien obj = new NhanVien();
+
+            if (tbName.Text == "" || dtpBirthDay.Text == "" || cbbGender.Text == "" || tbSalary.Text == "" || tbPhoneNumber.Text == ""
+                || tbAddress.Text == "" || tbAccount.Text == "" || tbPassword.Text == "")
+            {
+                MessageBox.Show("Yêu cầu nhập đầy đủ thông tin");
+            }
+            else
+            {
+                obj.ID_NhanVien = Convert.ToInt32(tbID.Text);
+                obj.Ten = tbName.Text;
+                obj.NgaySinh = dtpBirthDay.Value;
+                if (cbbGender.SelectedIndex == 0)
+                    obj.GioiTinh = false;
+                else
+                    obj.GioiTinh = true;
+                obj.DienThoai = tbPhoneNumber.Text;
+                obj.DiaChi = tbAddress.Text;
+                obj.Luong = Convert.ToInt32(tbSalary.Text);
+                obj.UserName = tbAccount.Text;
+                obj.Pasword = tbPassword.Text;
+                obj.Created_By = nvCurrent.Ten;
+                obj.Created_At = nvCurrent.Created_At;
+                obj.Updated_By = _nhanvien.Ten;
+                obj.Updated_At = DateTime.Now;
+
+                MessageBox.Show("Cập nhật dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 var dao = new NguoiDAO();
                 return dao.InsertUpdate(obj);
             }
-
             return -1;
         }
 
@@ -149,14 +207,74 @@ namespace InventoryManagement.Forms
             
             if (MessageBox.Show("Bạn có chắc muốn xóa nhân viên này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                
-                MessageBox.Show("Xóa thành công", "Thông báo");
-                LoadNhanVien();
+                for (int i = 0; i < lvUser.Items.Count; i++)
+                {
+                    if (lvUser.Items[i].Selected)
+                    {
+                        dao.Delete_ID(dsNhanVien[i].ID_NhanVien);
+                        MessageBox.Show("Xóa nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadNhanVien();
+                    }
+                }
             }
             else
             {
                 MessageBox.Show("Vui lòng thử lại", "Lỗi");
             }
         }
+
+        #region insert and update
+        //private int InsertUpdateStaff()
+        //{
+        //    NhanVien obj = new NhanVien();
+        //    //obj.ID_NhanVien = 0;
+
+        //    if (tbName.Text == "" || dtpBirthDay.Text == "" || cbbGender.Text == "" || tbSalary.Text == "" || tbPhoneNumber.Text == ""
+        //        || tbAddress.Text == "" || tbAccount.Text == "" || tbPassword.Text == "")
+        //    {
+        //        MessageBox.Show("Yêu cầu nhập đầy đủ thông tin");
+        //    }
+        //    else
+        //    {
+        //        obj.ID_NhanVien = Convert.ToInt32(tbID.Text);
+        //        obj.Ten = tbName.Text;
+        //        obj.NgaySinh = dtpBirthDay.Value;
+        //        if (cbbGender.SelectedIndex == 0)
+        //            obj.GioiTinh = false;
+        //        else
+        //            obj.GioiTinh = true;
+        //        obj.DienThoai = tbPhoneNumber.Text;
+        //        obj.DiaChi = tbAddress.Text;
+        //        obj.Luong = Convert.ToInt32(tbSalary.Text);
+        //        obj.UserName = tbAccount.Text;
+        //        obj.Pasword = tbPassword.Text;
+        //        obj.Created_By = _nhanvien.Ten;
+        //        obj.Created_At = DateTime.Now;
+        //        obj.Updated_By = _nhanvien.Ten;
+        //        obj.Updated_At = DateTime.Now;
+
+        //        var dao = new NguoiDAO();
+        //        return dao.InsertUpdate(obj);
+        //    }
+        //    return -1;
+        //}
+        #endregion
+
+        #endregion
+
+        private void lvUser_DoubleClick(object sender, EventArgs e)
+        {
+            //NhanVien nhanvien = new NhanVien();
+            for (int i = 0; i < lvUser.Items.Count; i++)
+            {
+                if (lvUser.Items[i].Selected) 
+                {
+                    nvCurrent = dsNhanVien[i];
+                }   
+            }
+            StaffDetailsForm frm = new StaffDetailsForm(nvCurrent);
+            frm.ShowDialog();
+        }
+
     }
 }

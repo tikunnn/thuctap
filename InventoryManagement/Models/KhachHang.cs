@@ -24,7 +24,7 @@ namespace InventoryManagement.Models
         public string Ten { get; set; }
         public string DiaChi { get; set; }
         public string SoDienThoai { get; set; }
-        public string ChiChu { get; set; }
+        public string GhiChu { get; set; }
         public string Created_By { get; set; }
         public Nullable<System.DateTime> Created_At { get; set; }
         public string Updated_By { get; set; }
@@ -33,5 +33,6 @@ namespace InventoryManagement.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDonBan> HoaDonBans { get; set; }
+        public virtual Xoa Xoa { get; set; }
     }
 }

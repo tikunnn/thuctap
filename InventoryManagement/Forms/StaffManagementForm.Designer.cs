@@ -65,15 +65,10 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiDeleteStaff = new System.Windows.Forms.ToolStripMenuItem();
             this.cbbGender = new System.Windows.Forms.ComboBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,6 +141,7 @@
             this.label8.Size = new System.Drawing.Size(72, 18);
             this.label8.TabIndex = 0;
             this.label8.Text = "Người tạo";
+            this.label8.Visible = false;
             // 
             // label9
             // 
@@ -156,6 +152,7 @@
             this.label9.Size = new System.Drawing.Size(67, 18);
             this.label9.TabIndex = 0;
             this.label9.Text = "Ngày tạo";
+            this.label9.Visible = false;
             // 
             // label10
             // 
@@ -176,6 +173,7 @@
             this.label11.Size = new System.Drawing.Size(107, 18);
             this.label11.TabIndex = 0;
             this.label11.Text = "Người cập nhật";
+            this.label11.Visible = false;
             // 
             // label12
             // 
@@ -186,6 +184,7 @@
             this.label12.Size = new System.Drawing.Size(102, 18);
             this.label12.TabIndex = 0;
             this.label12.Text = "Ngày cập nhật";
+            this.label12.Visible = false;
             // 
             // label13
             // 
@@ -263,6 +262,7 @@
             this.tbPersonCreated.ReadOnly = true;
             this.tbPersonCreated.Size = new System.Drawing.Size(169, 22);
             this.tbPersonCreated.TabIndex = 1;
+            this.tbPersonCreated.Visible = false;
             // 
             // tbPersonUpdated
             // 
@@ -272,6 +272,7 @@
             this.tbPersonUpdated.ReadOnly = true;
             this.tbPersonUpdated.Size = new System.Drawing.Size(169, 22);
             this.tbPersonUpdated.TabIndex = 1;
+            this.tbPersonUpdated.Visible = false;
             // 
             // tbSalary
             // 
@@ -284,6 +285,7 @@
             // dtpDateCreated
             // 
             this.dtpDateCreated.CustomFormat = "dd-MM-yyyy";
+            this.dtpDateCreated.Enabled = false;
             this.dtpDateCreated.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDateCreated.Location = new System.Drawing.Point(755, 30);
             this.dtpDateCreated.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -291,10 +293,12 @@
             this.dtpDateCreated.Size = new System.Drawing.Size(169, 22);
             this.dtpDateCreated.TabIndex = 2;
             this.dtpDateCreated.Value = new System.DateTime(2001, 8, 23, 0, 0, 0, 0);
+            this.dtpDateCreated.Visible = false;
             // 
             // dtpDateUpdated
             // 
             this.dtpDateUpdated.CustomFormat = "dd-MM-yyyy";
+            this.dtpDateUpdated.Enabled = false;
             this.dtpDateUpdated.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDateUpdated.Location = new System.Drawing.Point(755, 87);
             this.dtpDateUpdated.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -302,6 +306,7 @@
             this.dtpDateUpdated.Size = new System.Drawing.Size(169, 22);
             this.dtpDateUpdated.TabIndex = 2;
             this.dtpDateUpdated.Value = new System.DateTime(2001, 8, 23, 0, 0, 0, 0);
+            this.dtpDateUpdated.Visible = false;
             // 
             // dtpBirthDay
             // 
@@ -316,24 +321,28 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.Color.LightGreen;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Location = new System.Drawing.Point(121, 181);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(99, 37);
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Lưu";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(226, 181);
+            this.btnReset.BackColor = System.Drawing.Color.Lavender;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReset.Location = new System.Drawing.Point(227, 181);
             this.btnReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(99, 37);
             this.btnReset.TabIndex = 3;
-            this.btnReset.Text = "Mặc định";
-            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Text = "Làm mới";
+            this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // lvUser
@@ -346,25 +355,20 @@
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9,
-            this.columnHeader10,
-            this.columnHeader11,
-            this.columnHeader12,
-            this.columnHeader13,
-            this.columnHeader14});
+            this.columnHeader8});
             this.lvUser.ContextMenuStrip = this.contextMenuStrip1;
             this.lvUser.FullRowSelect = true;
             this.lvUser.GridLines = true;
             this.lvUser.HideSelection = false;
-            this.lvUser.Location = new System.Drawing.Point(16, 238);
-            this.lvUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvUser.Location = new System.Drawing.Point(16, 235);
+            this.lvUser.Margin = new System.Windows.Forms.Padding(4);
             this.lvUser.Name = "lvUser";
-            this.lvUser.Size = new System.Drawing.Size(935, 515);
+            this.lvUser.Size = new System.Drawing.Size(935, 518);
             this.lvUser.TabIndex = 4;
             this.lvUser.UseCompatibleStateImageBehavior = false;
             this.lvUser.View = System.Windows.Forms.View.Details;
             this.lvUser.Click += new System.EventHandler(this.lvUser_Click);
+            this.lvUser.DoubleClick += new System.EventHandler(this.lvUser_DoubleClick);
             // 
             // columnHeader1
             // 
@@ -401,30 +405,6 @@
             // 
             this.columnHeader8.Text = "Lương";
             // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Người tạo";
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "Ngày tạo";
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "Người cập nhật";
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "Ngày cập nhật";
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "Tài khoản";
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "Mật khẩu";
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -447,17 +427,30 @@
             "Nam",
             "Nữ"});
             this.cbbGender.Location = new System.Drawing.Point(121, 111);
-            this.cbbGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbGender.Margin = new System.Windows.Forms.Padding(4);
             this.cbbGender.Name = "cbbGender";
             this.cbbGender.Size = new System.Drawing.Size(128, 24);
             this.cbbGender.TabIndex = 5;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpdate.Location = new System.Drawing.Point(332, 181);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(100, 37);
+            this.btnUpdate.TabIndex = 6;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // StaffManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(968, 768);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.cbbGender);
             this.Controls.Add(this.lvUser);
             this.Controls.Add(this.btnReset);
@@ -536,14 +529,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.ColumnHeader columnHeader11;
-        private System.Windows.Forms.ColumnHeader columnHeader12;
-        private System.Windows.Forms.ColumnHeader columnHeader13;
-        private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.ComboBox cbbGender;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteStaff;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

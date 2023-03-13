@@ -88,7 +88,7 @@
           <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
           <ScalarProperty Name="Created_At" ColumnName="Created_At" />
           <ScalarProperty Name="Created_By" ColumnName="Created_By" />
-          <ScalarProperty Name="ChiChu" ColumnName="ChiChu" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
           <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
           <ScalarProperty Name="Ten" ColumnName="Ten" />

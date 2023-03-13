@@ -26,7 +26,7 @@ namespace InventoryManagement.Models
         public string DonViTinh { get; set; }
         public Nullable<double> GiaBan { get; set; }
         public string XuatXu { get; set; }
-        public string HinhAnh { get; set; }
+        public byte[] HinhAnh { get; set; }
         public string Created_By { get; set; }
         public Nullable<System.DateTime> Created_At { get; set; }
         public string Updated_By { get; set; }
@@ -37,5 +37,6 @@ namespace InventoryManagement.Models
         public virtual ICollection<CT_HoaDonBan> CT_HoaDonBan { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_HoaDonMua> CT_HoaDonMua { get; set; }
+        public virtual Xoa Xoa { get; set; }
     }
 }

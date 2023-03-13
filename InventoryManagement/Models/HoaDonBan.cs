@@ -29,5 +29,6 @@ namespace InventoryManagement.Models
         public virtual KhachHang KhachHang { get; set; }
         public virtual Kho Kho { get; set; }
         public virtual NhanVien NhanVien { get; set; }
+        public virtual Xoa Xoa { get; set; }
     }
 }
