@@ -212,7 +212,7 @@
             this.tbID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbID.Name = "tbID";
             this.tbID.Size = new System.Drawing.Size(185, 22);
-            this.tbID.TabIndex = 1;
+            this.tbID.TabIndex = 0;
             // 
             // tbName
             // 
@@ -228,7 +228,7 @@
             this.tbPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbPhoneNumber.Name = "tbPhoneNumber";
             this.tbPhoneNumber.Size = new System.Drawing.Size(169, 22);
-            this.tbPhoneNumber.TabIndex = 1;
+            this.tbPhoneNumber.TabIndex = 5;
             // 
             // tbAccount
             // 
@@ -236,7 +236,7 @@
             this.tbAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbAccount.Name = "tbAccount";
             this.tbAccount.Size = new System.Drawing.Size(169, 22);
-            this.tbAccount.TabIndex = 1;
+            this.tbAccount.TabIndex = 7;
             // 
             // tbAddress
             // 
@@ -244,7 +244,7 @@
             this.tbAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(169, 22);
-            this.tbAddress.TabIndex = 1;
+            this.tbAddress.TabIndex = 6;
             // 
             // tbPassword
             // 
@@ -252,7 +252,7 @@
             this.tbPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(169, 22);
-            this.tbPassword.TabIndex = 1;
+            this.tbPassword.TabIndex = 8;
             // 
             // tbPersonCreated
             // 
@@ -280,7 +280,7 @@
             this.tbSalary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSalary.Name = "tbSalary";
             this.tbSalary.Size = new System.Drawing.Size(185, 22);
-            this.tbSalary.TabIndex = 1;
+            this.tbSalary.TabIndex = 4;
             // 
             // dtpDateCreated
             // 
@@ -327,7 +327,7 @@
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(99, 37);
-            this.btnAdd.TabIndex = 3;
+            this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "Lưu";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -340,7 +340,7 @@
             this.btnReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(99, 37);
-            this.btnReset.TabIndex = 3;
+            this.btnReset.TabIndex = 10;
             this.btnReset.Text = "Làm mới";
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -430,7 +430,7 @@
             this.cbbGender.Margin = new System.Windows.Forms.Padding(4);
             this.cbbGender.Name = "cbbGender";
             this.cbbGender.Size = new System.Drawing.Size(128, 24);
-            this.cbbGender.TabIndex = 5;
+            this.cbbGender.TabIndex = 3;
             // 
             // btnUpdate
             // 
@@ -439,7 +439,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(332, 181);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 37);
-            this.btnUpdate.TabIndex = 6;
+            this.btnUpdate.TabIndex = 11;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
