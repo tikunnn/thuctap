@@ -123,6 +123,7 @@
             // 
             // tbID
             // 
+            this.tbID.Enabled = false;
             this.tbID.Location = new System.Drawing.Point(149, 30);
             this.tbID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbID.Name = "tbID";

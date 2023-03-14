@@ -101,13 +101,9 @@ namespace InventoryManagement
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             if (cbShowPassword.Checked)
-            {
                 tbPass.PasswordChar = '\0';
-            }
             else
-            {
                 tbPass.PasswordChar = '*';
-            }
         }
     }
 }

@@ -98,6 +98,7 @@ namespace InventoryManagement.Forms
         private void lvUser_Click(object sender, EventArgs e)
         {
             btnAdd.Enabled = false;
+            tbID.Enabled = false;
             for (int i = 0; i < lvUser.Items.Count; i++)
             {
                 if (lvUser.Items[i].Selected)
