@@ -25,9 +25,9 @@ namespace InventoryManagement.DAO
 
         public int InsertUpdate(NhanVien obj)
         {
-            using (var db = new STORAGEEntities())
+            using (var db = new STORAGEEntities1())
             {
-                using (var db1 = new STORAGEEntities())
+                using (var db1 = new STORAGEEntities1())
                 {
                     var find = db.NhanViens.FirstOrDefault(x => x.ID_NhanVien == obj.ID_NhanVien);
                     if (find != null) db1.Entry(obj).State = EntityState.Modified;
@@ -72,9 +72,9 @@ namespace InventoryManagement.DAO
 
         public void CheckUser(NhanVien obj)
         {
-            using (var db = new STORAGEEntities())
+            using (var db = new STORAGEEntities1())
             {
-                using (var db1 = new STORAGEEntities())
+                using (var db1 = new STORAGEEntities1())
                 {
                     var find = db.NhanViens.FirstOrDefault(x => x.UserName == obj.UserName);
                     if (find != null) db1.Entry(obj).State = EntityState.Modified;
@@ -86,7 +86,7 @@ namespace InventoryManagement.DAO
 
         public void Delete_ID (int id)
         {
-            using (var db = new STORAGEEntities ())
+            using (var db = new STORAGEEntities1 ())
             {
                 var obj = db.NhanViens.FirstOrDefault(x => x.ID_NhanVien == id);
                 if (obj != null)
@@ -99,7 +99,7 @@ namespace InventoryManagement.DAO
 
         public void Delete_IDs(List<string> IDs)
         {
-            using (var db = new STORAGEEntities())
+            using (var db = new STORAGEEntities1())
             {
                 var ls = db.NhanViens.AsQueryable();
                 if (ls != null && ls.Any())

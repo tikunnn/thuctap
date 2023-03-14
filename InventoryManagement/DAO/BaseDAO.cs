@@ -10,10 +10,10 @@ namespace InventoryManagement.DAO
 {
     public class BaseDAO
     {
-        public STORAGEEntities _connect;
+        public STORAGEEntities1 _connect;
         public BaseDAO()
         {
-            _connect = new STORAGEEntities();
+            _connect = new STORAGEEntities1();
         }
     }
 }

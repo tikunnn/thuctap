@@ -13,10 +13,9 @@ namespace InventoryManagement.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class STORAGEEntities : DbContext
+    public partial class STORAGEEntities1 : DbContext
     {
-        public STORAGEEntities()
-            : base("name=STORAGEEntities")
+        public STORAGEEntities1()
         {
         }
     
@@ -34,6 +33,7 @@ namespace InventoryManagement.Models
         public virtual DbSet<Kho> Khoes { get; set; }
         public virtual DbSet<NhaCungCap> NhaCungCaps { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Xoa> Xoas { get; set; }
     }
 }

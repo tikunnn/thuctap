@@ -60,7 +60,27 @@
   <ItemGroup>
     <Compile Include="DAO\BaseDAO.cs" />
     <Compile Include="DAO\HangDAO.cs" />
+    <Compile Include="DAO\HoaDonBanDao.cs" />
+    <Compile Include="DAO\HoaDonMuaDAO.cs" />
     <Compile Include="DAO\NguoiDAO.cs" />
+    <Compile Include="Forms\BillBuyDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BillBuyDetails.Designer.cs">
+      <DependentUpon>BillBuyDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BillBuyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BillBuyForm.Designer.cs">
+      <DependentUpon>BillBuyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BillSellForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BillSellForm.Designer.cs">
+      <DependentUpon>BillSellForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CommodityDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,18 +92,6 @@
     </Compile>
     <Compile Include="Forms\CommodityManagementForm.Designer.cs">
       <DependentUpon>CommodityManagementForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\PurshaseBillForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PurshaseBillForm.Designer.cs">
-      <DependentUpon>PurshaseBillForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\SellBillForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\SellBillForm.Designer.cs">
-      <DependentUpon>SellBillForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SpendingManagementForm.cs">
       <SubType>Form</SubType>
@@ -157,22 +165,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>STORAGEDbContext.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>STORAGEDbContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Xoa.cs">
       <DependentUpon>STORAGEDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\BillBuyDetails.resx">
+      <DependentUpon>BillBuyDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BillBuyForm.resx">
+      <DependentUpon>BillBuyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BillSellForm.resx">
+      <DependentUpon>BillSellForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CommodityDetails.resx">
       <DependentUpon>CommodityDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CommodityManagementForm.resx">
       <DependentUpon>CommodityManagementForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PurshaseBillForm.resx">
-      <DependentUpon>PurshaseBillForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SellBillForm.resx">
-      <DependentUpon>SellBillForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SpendingManagementForm.resx">
       <DependentUpon>SpendingManagementForm.cs</DependentUpon>
@@ -220,7 +234,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Models\STORAGEDbContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -232,6 +245,8 @@
       <DependentUpon>STORAGEDbContext.edmx</DependentUpon>
       <LastGenOutput>STORAGEDbContext.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\logout black.png" />
     <None Include="Resources\wages.png" />
     <None Include="Resources\teamwork.png" />

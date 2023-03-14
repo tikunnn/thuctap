@@ -4,36 +4,37 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7f9219174a254137bd4e4311e821f93e" Name="Diagram1">
-        <EntityTypeShape EntityType="STORAGEModel.CT_HoaDonBan" Width="1.5" PointX="5.25" PointY="27" />
-        <EntityTypeShape EntityType="STORAGEModel.CT_HoaDonMua" Width="1.5" PointX="8.25" PointY="27" />
-        <EntityTypeShape EntityType="STORAGEModel.HangHoa" Width="1.5" PointX="3" PointY="33.375" />
-        <EntityTypeShape EntityType="STORAGEModel.HoaDonBan" Width="1.5" PointX="5.25" PointY="21.75" />
-        <EntityTypeShape EntityType="STORAGEModel.HoaDonMua" Width="1.5" PointX="5.25" PointY="33.125" />
-        <EntityTypeShape EntityType="STORAGEModel.KhachHang" Width="1.5" PointX="3" PointY="11.5" />
-        <EntityTypeShape EntityType="STORAGEModel.Kho" Width="1.5" PointX="3" PointY="42.5" />
-        <EntityTypeShape EntityType="STORAGEModel.NhaCungCap" Width="1.5" PointX="3" PointY="46.625" />
-        <EntityTypeShape EntityType="STORAGEModel.NhanVien" Width="1.5" PointX="3" PointY="23.75" />
-        <EntityTypeShape EntityType="STORAGEModel.Xoa" Width="1.5" PointX="0.75" PointY="20.25" />
-        <AssociationConnector Association="STORAGEModel.FK_CT_HoaDonBan_HangHoa" />
-        <AssociationConnector Association="STORAGEModel.FK_CT_HoaDonBan_HoaDonBan" />
-        <AssociationConnector Association="STORAGEModel.FK_CT_HoaDonBan_Xoa" />
-        <AssociationConnector Association="STORAGEModel.FK_CT_HoaDonMua_HangHoa" />
-        <AssociationConnector Association="STORAGEModel.FK_CT_HoaDonMua_HoaDonMua" />
-        <AssociationConnector Association="STORAGEModel.FK_CT_HoaDonMua_Xoa" />
-        <AssociationConnector Association="STORAGEModel.FK_HangHoa_Xoa" />
-        <AssociationConnector Association="STORAGEModel.FK_HoaDonBan_KhachHang" />
-        <AssociationConnector Association="STORAGEModel.FK_HoaDonBan_Kho" />
-        <AssociationConnector Association="STORAGEModel.FK_HoaDonBan_NhanVien" />
-        <AssociationConnector Association="STORAGEModel.FK_HoaDonBan_Xoa" />
-        <AssociationConnector Association="STORAGEModel.FK_HoaDonMua_Kho" />
-        <AssociationConnector Association="STORAGEModel.FK_HoaDonMua_NhaCungCap" />
-        <AssociationConnector Association="STORAGEModel.FK_HoaDonMua_NhanVien" />
-        <AssociationConnector Association="STORAGEModel.FK_HoaDonMua_Xoa" />
-        <AssociationConnector Association="STORAGEModel.FK_KhachHang_Xoa" />
-        <AssociationConnector Association="STORAGEModel.FK_Kho_Xoa" />
-        <AssociationConnector Association="STORAGEModel.FK_NhaCungCap_Xoa" />
-        <AssociationConnector Association="STORAGEModel.FK_NhanVien_Xoa" />
+      <Diagram DiagramId="b7c780fec39747ceb17939bda316d061" Name="Diagram1">
+        <EntityTypeShape EntityType="STORAGEModel.CT_HoaDonBan" Width="1.5" PointX="5.25" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="STORAGEModel.CT_HoaDonMua" Width="1.5" PointX="8.25" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="STORAGEModel.HangHoa" Width="1.5" PointX="3" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="STORAGEModel.HoaDonBan" Width="1.5" PointX="5.25" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="STORAGEModel.HoaDonMua" Width="1.5" PointX="8.25" PointY="35.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="STORAGEModel.KhachHang" Width="1.5" PointX="3" PointY="33.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="STORAGEModel.Kho" Width="1.5" PointX="3" PointY="37.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="STORAGEModel.NhaCungCap" Width="1.5" PointX="3" PointY="41.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="STORAGEModel.NhanVien" Width="1.5" PointX="3" PointY="45.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="STORAGEModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="STORAGEModel.Xoa" Width="1.5" PointX="0.75" PointY="20.25" IsExpanded="true" />
+        <AssociationConnector Association="STORAGEModel.FK_CT_HoaDonBan_HangHoa" ManuallyRouted="false" />
+        <AssociationConnector Association="STORAGEModel.FK_CT_HoaDonBan_HoaDonBan" ManuallyRouted="false" />
+        <AssociationConnector Association="STORAGEModel.FK_CT_HoaDonBan_Xoa" ManuallyRouted="false" />
+        <AssociationConnector Association="STORAGEModel.FK_CT_HoaDonMua_HangHoa" ManuallyRouted="false" />
+        <AssociationConnector Association="STORAGEModel.FK_CT_HoaDonMua_HoaDonMua" ManuallyRouted="false" />
+        <AssociationConnector Association="STORAGEModel.FK_CT_HoaDonMua_Xoa" ManuallyRouted="false" />
+        <AssociationConnector Association="STORAGEModel.FK_HangHoa_Xoa" ManuallyRouted="false" />
+        <AssociationConnector Association="STORAGEModel.FK_HoaDonBan_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="STORAGEModel.FK_HoaDonBan_Kho" ManuallyRouted="false" />
+        <AssociationConnector Association="STORAGEModel.FK_HoaDonBan_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="STORAGEModel.FK_HoaDonBan_Xoa" ManuallyRouted="false" />
+        <AssociationConnector Association="STORAGEModel.FK_HoaDonMua_Kho" ManuallyRouted="false" />
+        <AssociationConnector Association="STORAGEModel.FK_HoaDonMua_NhaCungCap" ManuallyRouted="false" />
+        <AssociationConnector Association="STORAGEModel.FK_HoaDonMua_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="STORAGEModel.FK_HoaDonMua_Xoa" ManuallyRouted="false" />
+        <AssociationConnector Association="STORAGEModel.FK_KhachHang_Xoa" ManuallyRouted="false" />
+        <AssociationConnector Association="STORAGEModel.FK_Kho_Xoa" ManuallyRouted="false" />
+        <AssociationConnector Association="STORAGEModel.FK_NhaCungCap_Xoa" ManuallyRouted="false" />
+        <AssociationConnector Association="STORAGEModel.FK_NhanVien_Xoa" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

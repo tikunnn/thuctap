@@ -1,93 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="STORAGEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityContainer Name="STORAGEEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="CT_HoaDonBan" EntityType="STORAGEModel.CT_HoaDonBan" />
-    <EntitySet Name="CT_HoaDonMua" EntityType="STORAGEModel.CT_HoaDonMua" />
-    <EntitySet Name="HangHoas" EntityType="STORAGEModel.HangHoa" />
-    <EntitySet Name="HoaDonBans" EntityType="STORAGEModel.HoaDonBan" />
-    <EntitySet Name="HoaDonMuas" EntityType="STORAGEModel.HoaDonMua" />
-    <EntitySet Name="KhachHangs" EntityType="STORAGEModel.KhachHang" />
-    <EntitySet Name="Khoes" EntityType="STORAGEModel.Kho" />
-    <EntitySet Name="NhaCungCaps" EntityType="STORAGEModel.NhaCungCap" />
-    <EntitySet Name="NhanViens" EntityType="STORAGEModel.NhanVien" />
-    <EntitySet Name="Xoas" EntityType="STORAGEModel.Xoa" />
-    <AssociationSet Name="FK_CT_HoaDonBan_HangHoa" Association="STORAGEModel.FK_CT_HoaDonBan_HangHoa">
-      <End Role="HangHoa" EntitySet="HangHoas" />
-      <End Role="CT_HoaDonBan" EntitySet="CT_HoaDonBan" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CT_HoaDonBan_HoaDonBan" Association="STORAGEModel.FK_CT_HoaDonBan_HoaDonBan">
-      <End Role="HoaDonBan" EntitySet="HoaDonBans" />
-      <End Role="CT_HoaDonBan" EntitySet="CT_HoaDonBan" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CT_HoaDonBan_Xoa" Association="STORAGEModel.FK_CT_HoaDonBan_Xoa">
-      <End Role="Xoa" EntitySet="Xoas" />
-      <End Role="CT_HoaDonBan" EntitySet="CT_HoaDonBan" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CT_HoaDonMua_HangHoa" Association="STORAGEModel.FK_CT_HoaDonMua_HangHoa">
-      <End Role="HangHoa" EntitySet="HangHoas" />
-      <End Role="CT_HoaDonMua" EntitySet="CT_HoaDonMua" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CT_HoaDonMua_HoaDonMua" Association="STORAGEModel.FK_CT_HoaDonMua_HoaDonMua">
-      <End Role="HoaDonMua" EntitySet="HoaDonMuas" />
-      <End Role="CT_HoaDonMua" EntitySet="CT_HoaDonMua" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CT_HoaDonMua_Xoa" Association="STORAGEModel.FK_CT_HoaDonMua_Xoa">
-      <End Role="Xoa" EntitySet="Xoas" />
-      <End Role="CT_HoaDonMua" EntitySet="CT_HoaDonMua" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HangHoa_Xoa" Association="STORAGEModel.FK_HangHoa_Xoa">
-      <End Role="Xoa" EntitySet="Xoas" />
-      <End Role="HangHoa" EntitySet="HangHoas" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HoaDonBan_KhachHang" Association="STORAGEModel.FK_HoaDonBan_KhachHang">
-      <End Role="KhachHang" EntitySet="KhachHangs" />
-      <End Role="HoaDonBan" EntitySet="HoaDonBans" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HoaDonBan_Kho" Association="STORAGEModel.FK_HoaDonBan_Kho">
-      <End Role="Kho" EntitySet="Khoes" />
-      <End Role="HoaDonBan" EntitySet="HoaDonBans" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HoaDonBan_NhanVien" Association="STORAGEModel.FK_HoaDonBan_NhanVien">
-      <End Role="NhanVien" EntitySet="NhanViens" />
-      <End Role="HoaDonBan" EntitySet="HoaDonBans" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HoaDonBan_Xoa" Association="STORAGEModel.FK_HoaDonBan_Xoa">
-      <End Role="Xoa" EntitySet="Xoas" />
-      <End Role="HoaDonBan" EntitySet="HoaDonBans" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HoaDonMua_Kho" Association="STORAGEModel.FK_HoaDonMua_Kho">
-      <End Role="Kho" EntitySet="Khoes" />
-      <End Role="HoaDonMua" EntitySet="HoaDonMuas" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HoaDonMua_NhaCungCap" Association="STORAGEModel.FK_HoaDonMua_NhaCungCap">
-      <End Role="NhaCungCap" EntitySet="NhaCungCaps" />
-      <End Role="HoaDonMua" EntitySet="HoaDonMuas" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HoaDonMua_NhanVien" Association="STORAGEModel.FK_HoaDonMua_NhanVien">
-      <End Role="NhanVien" EntitySet="NhanViens" />
-      <End Role="HoaDonMua" EntitySet="HoaDonMuas" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HoaDonMua_Xoa" Association="STORAGEModel.FK_HoaDonMua_Xoa">
-      <End Role="Xoa" EntitySet="Xoas" />
-      <End Role="HoaDonMua" EntitySet="HoaDonMuas" />
-    </AssociationSet>
-    <AssociationSet Name="FK_KhachHang_Xoa" Association="STORAGEModel.FK_KhachHang_Xoa">
-      <End Role="Xoa" EntitySet="Xoas" />
-      <End Role="KhachHang" EntitySet="KhachHangs" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Kho_Xoa" Association="STORAGEModel.FK_Kho_Xoa">
-      <End Role="Xoa" EntitySet="Xoas" />
-      <End Role="Kho" EntitySet="Khoes" />
-    </AssociationSet>
-    <AssociationSet Name="FK_NhaCungCap_Xoa" Association="STORAGEModel.FK_NhaCungCap_Xoa">
-      <End Role="Xoa" EntitySet="Xoas" />
-      <End Role="NhaCungCap" EntitySet="NhaCungCaps" />
-    </AssociationSet>
-    <AssociationSet Name="FK_NhanVien_Xoa" Association="STORAGEModel.FK_NhanVien_Xoa">
-      <End Role="Xoa" EntitySet="Xoas" />
-      <End Role="NhanVien" EntitySet="NhanViens" />
-    </AssociationSet>
-  </EntityContainer>
   <EntityType Name="CT_HoaDonBan">
     <Key>
       <PropertyRef Name="ID_HoaDonBan" />
@@ -101,9 +13,9 @@
     <Property Name="Updated_At" Type="DateTime" Precision="3" />
     <Property Name="Gia" Type="Double" />
     <Property Name="ID_Xoa" Type="Int32" />
-    <NavigationProperty Name="HangHoa" Relationship="STORAGEModel.FK_CT_HoaDonBan_HangHoa" FromRole="CT_HoaDonBan" ToRole="HangHoa" />
-    <NavigationProperty Name="HoaDonBan" Relationship="STORAGEModel.FK_CT_HoaDonBan_HoaDonBan" FromRole="CT_HoaDonBan" ToRole="HoaDonBan" />
-    <NavigationProperty Name="Xoa" Relationship="STORAGEModel.FK_CT_HoaDonBan_Xoa" FromRole="CT_HoaDonBan" ToRole="Xoa" />
+    <NavigationProperty Name="HangHoa" Relationship="Self.FK_CT_HoaDonBan_HangHoa" FromRole="CT_HoaDonBan" ToRole="HangHoa" />
+    <NavigationProperty Name="HoaDonBan" Relationship="Self.FK_CT_HoaDonBan_HoaDonBan" FromRole="CT_HoaDonBan" ToRole="HoaDonBan" />
+    <NavigationProperty Name="Xoa" Relationship="Self.FK_CT_HoaDonBan_Xoa" FromRole="CT_HoaDonBan" ToRole="Xoa" />
   </EntityType>
   <EntityType Name="CT_HoaDonMua">
     <Key>
@@ -118,9 +30,9 @@
     <Property Name="Updated_At" Type="DateTime" Precision="3" />
     <Property Name="Gia" Type="Double" />
     <Property Name="ID_Xoa" Type="Int32" />
-    <NavigationProperty Name="HangHoa" Relationship="STORAGEModel.FK_CT_HoaDonMua_HangHoa" FromRole="CT_HoaDonMua" ToRole="HangHoa" />
-    <NavigationProperty Name="HoaDonMua" Relationship="STORAGEModel.FK_CT_HoaDonMua_HoaDonMua" FromRole="CT_HoaDonMua" ToRole="HoaDonMua" />
-    <NavigationProperty Name="Xoa" Relationship="STORAGEModel.FK_CT_HoaDonMua_Xoa" FromRole="CT_HoaDonMua" ToRole="Xoa" />
+    <NavigationProperty Name="HangHoa" Relationship="Self.FK_CT_HoaDonMua_HangHoa" FromRole="CT_HoaDonMua" ToRole="HangHoa" />
+    <NavigationProperty Name="HoaDonMua" Relationship="Self.FK_CT_HoaDonMua_HoaDonMua" FromRole="CT_HoaDonMua" ToRole="HoaDonMua" />
+    <NavigationProperty Name="Xoa" Relationship="Self.FK_CT_HoaDonMua_Xoa" FromRole="CT_HoaDonMua" ToRole="Xoa" />
   </EntityType>
   <EntityType Name="HangHoa">
     <Key>
@@ -137,9 +49,9 @@
     <Property Name="Updated_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="Updated_At" Type="DateTime" Precision="3" />
     <Property Name="ID_Xoa" Type="Int32" />
-    <NavigationProperty Name="CT_HoaDonBan" Relationship="STORAGEModel.FK_CT_HoaDonBan_HangHoa" FromRole="HangHoa" ToRole="CT_HoaDonBan" />
-    <NavigationProperty Name="CT_HoaDonMua" Relationship="STORAGEModel.FK_CT_HoaDonMua_HangHoa" FromRole="HangHoa" ToRole="CT_HoaDonMua" />
-    <NavigationProperty Name="Xoa" Relationship="STORAGEModel.FK_HangHoa_Xoa" FromRole="HangHoa" ToRole="Xoa" />
+    <NavigationProperty Name="CT_HoaDonBan" Relationship="Self.FK_CT_HoaDonBan_HangHoa" FromRole="HangHoa" ToRole="CT_HoaDonBan" />
+    <NavigationProperty Name="CT_HoaDonMua" Relationship="Self.FK_CT_HoaDonMua_HangHoa" FromRole="HangHoa" ToRole="CT_HoaDonMua" />
+    <NavigationProperty Name="Xoa" Relationship="Self.FK_HangHoa_Xoa" FromRole="HangHoa" ToRole="Xoa" />
   </EntityType>
   <EntityType Name="HoaDonBan">
     <Key>
@@ -155,11 +67,11 @@
     <Property Name="Updated_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="Updated_At" Type="DateTime" Precision="3" />
     <Property Name="ID_Xoa" Type="Int32" />
-    <NavigationProperty Name="CT_HoaDonBan" Relationship="STORAGEModel.FK_CT_HoaDonBan_HoaDonBan" FromRole="HoaDonBan" ToRole="CT_HoaDonBan" />
-    <NavigationProperty Name="KhachHang" Relationship="STORAGEModel.FK_HoaDonBan_KhachHang" FromRole="HoaDonBan" ToRole="KhachHang" />
-    <NavigationProperty Name="Kho" Relationship="STORAGEModel.FK_HoaDonBan_Kho" FromRole="HoaDonBan" ToRole="Kho" />
-    <NavigationProperty Name="NhanVien" Relationship="STORAGEModel.FK_HoaDonBan_NhanVien" FromRole="HoaDonBan" ToRole="NhanVien" />
-    <NavigationProperty Name="Xoa" Relationship="STORAGEModel.FK_HoaDonBan_Xoa" FromRole="HoaDonBan" ToRole="Xoa" />
+    <NavigationProperty Name="CT_HoaDonBan" Relationship="Self.FK_CT_HoaDonBan_HoaDonBan" FromRole="HoaDonBan" ToRole="CT_HoaDonBan" />
+    <NavigationProperty Name="KhachHang" Relationship="Self.FK_HoaDonBan_KhachHang" FromRole="HoaDonBan" ToRole="KhachHang" />
+    <NavigationProperty Name="Kho" Relationship="Self.FK_HoaDonBan_Kho" FromRole="HoaDonBan" ToRole="Kho" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.FK_HoaDonBan_NhanVien" FromRole="HoaDonBan" ToRole="NhanVien" />
+    <NavigationProperty Name="Xoa" Relationship="Self.FK_HoaDonBan_Xoa" FromRole="HoaDonBan" ToRole="Xoa" />
   </EntityType>
   <EntityType Name="HoaDonMua">
     <Key>
@@ -175,11 +87,11 @@
     <Property Name="Updated_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="Updated_At" Type="DateTime" Precision="3" />
     <Property Name="ID_Xoa" Type="Int32" />
-    <NavigationProperty Name="CT_HoaDonMua" Relationship="STORAGEModel.FK_CT_HoaDonMua_HoaDonMua" FromRole="HoaDonMua" ToRole="CT_HoaDonMua" />
-    <NavigationProperty Name="Kho" Relationship="STORAGEModel.FK_HoaDonMua_Kho" FromRole="HoaDonMua" ToRole="Kho" />
-    <NavigationProperty Name="NhaCungCap" Relationship="STORAGEModel.FK_HoaDonMua_NhaCungCap" FromRole="HoaDonMua" ToRole="NhaCungCap" />
-    <NavigationProperty Name="NhanVien" Relationship="STORAGEModel.FK_HoaDonMua_NhanVien" FromRole="HoaDonMua" ToRole="NhanVien" />
-    <NavigationProperty Name="Xoa" Relationship="STORAGEModel.FK_HoaDonMua_Xoa" FromRole="HoaDonMua" ToRole="Xoa" />
+    <NavigationProperty Name="CT_HoaDonMua" Relationship="Self.FK_CT_HoaDonMua_HoaDonMua" FromRole="HoaDonMua" ToRole="CT_HoaDonMua" />
+    <NavigationProperty Name="Kho" Relationship="Self.FK_HoaDonMua_Kho" FromRole="HoaDonMua" ToRole="Kho" />
+    <NavigationProperty Name="NhaCungCap" Relationship="Self.FK_HoaDonMua_NhaCungCap" FromRole="HoaDonMua" ToRole="NhaCungCap" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.FK_HoaDonMua_NhanVien" FromRole="HoaDonMua" ToRole="NhanVien" />
+    <NavigationProperty Name="Xoa" Relationship="Self.FK_HoaDonMua_Xoa" FromRole="HoaDonMua" ToRole="Xoa" />
   </EntityType>
   <EntityType Name="KhachHang">
     <Key>
@@ -195,8 +107,8 @@
     <Property Name="Updated_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="Updated_At" Type="DateTime" Precision="3" />
     <Property Name="ID_Xoa" Type="Int32" />
-    <NavigationProperty Name="HoaDonBans" Relationship="STORAGEModel.FK_HoaDonBan_KhachHang" FromRole="KhachHang" ToRole="HoaDonBan" />
-    <NavigationProperty Name="Xoa" Relationship="STORAGEModel.FK_KhachHang_Xoa" FromRole="KhachHang" ToRole="Xoa" />
+    <NavigationProperty Name="HoaDonBans" Relationship="Self.FK_HoaDonBan_KhachHang" FromRole="KhachHang" ToRole="HoaDonBan" />
+    <NavigationProperty Name="Xoa" Relationship="Self.FK_KhachHang_Xoa" FromRole="KhachHang" ToRole="Xoa" />
   </EntityType>
   <EntityType Name="Kho">
     <Key>
@@ -211,9 +123,9 @@
     <Property Name="Updated_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="Updated_At" Type="DateTime" Precision="3" />
     <Property Name="ID_Xoa" Type="Int32" />
-    <NavigationProperty Name="HoaDonBans" Relationship="STORAGEModel.FK_HoaDonBan_Kho" FromRole="Kho" ToRole="HoaDonBan" />
-    <NavigationProperty Name="HoaDonMuas" Relationship="STORAGEModel.FK_HoaDonMua_Kho" FromRole="Kho" ToRole="HoaDonMua" />
-    <NavigationProperty Name="Xoa" Relationship="STORAGEModel.FK_Kho_Xoa" FromRole="Kho" ToRole="Xoa" />
+    <NavigationProperty Name="HoaDonBans" Relationship="Self.FK_HoaDonBan_Kho" FromRole="Kho" ToRole="HoaDonBan" />
+    <NavigationProperty Name="HoaDonMuas" Relationship="Self.FK_HoaDonMua_Kho" FromRole="Kho" ToRole="HoaDonMua" />
+    <NavigationProperty Name="Xoa" Relationship="Self.FK_Kho_Xoa" FromRole="Kho" ToRole="Xoa" />
   </EntityType>
   <EntityType Name="NhaCungCap">
     <Key>
@@ -229,8 +141,8 @@
     <Property Name="Updated_By" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="Updated_At" Type="DateTime" Precision="3" />
     <Property Name="ID_Xoa" Type="Int32" />
-    <NavigationProperty Name="HoaDonMuas" Relationship="STORAGEModel.FK_HoaDonMua_NhaCungCap" FromRole="NhaCungCap" ToRole="HoaDonMua" />
-    <NavigationProperty Name="Xoa" Relationship="STORAGEModel.FK_NhaCungCap_Xoa" FromRole="NhaCungCap" ToRole="Xoa" />
+    <NavigationProperty Name="HoaDonMuas" Relationship="Self.FK_HoaDonMua_NhaCungCap" FromRole="NhaCungCap" ToRole="HoaDonMua" />
+    <NavigationProperty Name="Xoa" Relationship="Self.FK_NhaCungCap_Xoa" FromRole="NhaCungCap" ToRole="Xoa" />
   </EntityType>
   <EntityType Name="NhanVien">
     <Key>
@@ -250,9 +162,19 @@
     <Property Name="UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="Pasword" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="ID_Xoa" Type="Int32" />
-    <NavigationProperty Name="HoaDonBans" Relationship="STORAGEModel.FK_HoaDonBan_NhanVien" FromRole="NhanVien" ToRole="HoaDonBan" />
-    <NavigationProperty Name="HoaDonMuas" Relationship="STORAGEModel.FK_HoaDonMua_NhanVien" FromRole="NhanVien" ToRole="HoaDonMua" />
-    <NavigationProperty Name="Xoa" Relationship="STORAGEModel.FK_NhanVien_Xoa" FromRole="NhanVien" ToRole="Xoa" />
+    <NavigationProperty Name="HoaDonBans" Relationship="Self.FK_HoaDonBan_NhanVien" FromRole="NhanVien" ToRole="HoaDonBan" />
+    <NavigationProperty Name="HoaDonMuas" Relationship="Self.FK_HoaDonMua_NhanVien" FromRole="NhanVien" ToRole="HoaDonMua" />
+    <NavigationProperty Name="Xoa" Relationship="Self.FK_NhanVien_Xoa" FromRole="NhanVien" ToRole="Xoa" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="Xoa">
     <Key>
@@ -261,19 +183,19 @@
     <Property Name="ID_Xoa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MoTa" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="LyDo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="CT_HoaDonBan" Relationship="STORAGEModel.FK_CT_HoaDonBan_Xoa" FromRole="Xoa" ToRole="CT_HoaDonBan" />
-    <NavigationProperty Name="CT_HoaDonMua" Relationship="STORAGEModel.FK_CT_HoaDonMua_Xoa" FromRole="Xoa" ToRole="CT_HoaDonMua" />
-    <NavigationProperty Name="HangHoas" Relationship="STORAGEModel.FK_HangHoa_Xoa" FromRole="Xoa" ToRole="HangHoa" />
-    <NavigationProperty Name="HoaDonBans" Relationship="STORAGEModel.FK_HoaDonBan_Xoa" FromRole="Xoa" ToRole="HoaDonBan" />
-    <NavigationProperty Name="HoaDonMuas" Relationship="STORAGEModel.FK_HoaDonMua_Xoa" FromRole="Xoa" ToRole="HoaDonMua" />
-    <NavigationProperty Name="KhachHangs" Relationship="STORAGEModel.FK_KhachHang_Xoa" FromRole="Xoa" ToRole="KhachHang" />
-    <NavigationProperty Name="Khoes" Relationship="STORAGEModel.FK_Kho_Xoa" FromRole="Xoa" ToRole="Kho" />
-    <NavigationProperty Name="NhaCungCaps" Relationship="STORAGEModel.FK_NhaCungCap_Xoa" FromRole="Xoa" ToRole="NhaCungCap" />
-    <NavigationProperty Name="NhanViens" Relationship="STORAGEModel.FK_NhanVien_Xoa" FromRole="Xoa" ToRole="NhanVien" />
+    <NavigationProperty Name="CT_HoaDonBan" Relationship="Self.FK_CT_HoaDonBan_Xoa" FromRole="Xoa" ToRole="CT_HoaDonBan" />
+    <NavigationProperty Name="CT_HoaDonMua" Relationship="Self.FK_CT_HoaDonMua_Xoa" FromRole="Xoa" ToRole="CT_HoaDonMua" />
+    <NavigationProperty Name="HangHoas" Relationship="Self.FK_HangHoa_Xoa" FromRole="Xoa" ToRole="HangHoa" />
+    <NavigationProperty Name="HoaDonBans" Relationship="Self.FK_HoaDonBan_Xoa" FromRole="Xoa" ToRole="HoaDonBan" />
+    <NavigationProperty Name="HoaDonMuas" Relationship="Self.FK_HoaDonMua_Xoa" FromRole="Xoa" ToRole="HoaDonMua" />
+    <NavigationProperty Name="KhachHangs" Relationship="Self.FK_KhachHang_Xoa" FromRole="Xoa" ToRole="KhachHang" />
+    <NavigationProperty Name="Khoes" Relationship="Self.FK_Kho_Xoa" FromRole="Xoa" ToRole="Kho" />
+    <NavigationProperty Name="NhaCungCaps" Relationship="Self.FK_NhaCungCap_Xoa" FromRole="Xoa" ToRole="NhaCungCap" />
+    <NavigationProperty Name="NhanViens" Relationship="Self.FK_NhanVien_Xoa" FromRole="Xoa" ToRole="NhanVien" />
   </EntityType>
   <Association Name="FK_CT_HoaDonBan_HangHoa">
-    <End Type="STORAGEModel.HangHoa" Role="HangHoa" Multiplicity="1" />
-    <End Type="STORAGEModel.CT_HoaDonBan" Role="CT_HoaDonBan" Multiplicity="*" />
+    <End Role="HangHoa" Type="Self.HangHoa" Multiplicity="1" />
+    <End Role="CT_HoaDonBan" Type="Self.CT_HoaDonBan" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="HangHoa">
         <PropertyRef Name="ID_HangHoa" />
@@ -284,8 +206,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CT_HoaDonBan_HoaDonBan">
-    <End Type="STORAGEModel.HoaDonBan" Role="HoaDonBan" Multiplicity="1" />
-    <End Type="STORAGEModel.CT_HoaDonBan" Role="CT_HoaDonBan" Multiplicity="0..1" />
+    <End Role="HoaDonBan" Type="Self.HoaDonBan" Multiplicity="1" />
+    <End Role="CT_HoaDonBan" Type="Self.CT_HoaDonBan" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="HoaDonBan">
         <PropertyRef Name="ID_HoaDonBan" />
@@ -296,8 +218,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CT_HoaDonBan_Xoa">
-    <End Type="STORAGEModel.Xoa" Role="Xoa" Multiplicity="0..1" />
-    <End Type="STORAGEModel.CT_HoaDonBan" Role="CT_HoaDonBan" Multiplicity="*" />
+    <End Role="Xoa" Type="Self.Xoa" Multiplicity="0..1" />
+    <End Role="CT_HoaDonBan" Type="Self.CT_HoaDonBan" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Xoa">
         <PropertyRef Name="ID_Xoa" />
@@ -308,8 +230,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CT_HoaDonMua_HangHoa">
-    <End Type="STORAGEModel.HangHoa" Role="HangHoa" Multiplicity="1" />
-    <End Type="STORAGEModel.CT_HoaDonMua" Role="CT_HoaDonMua" Multiplicity="*" />
+    <End Role="HangHoa" Type="Self.HangHoa" Multiplicity="1" />
+    <End Role="CT_HoaDonMua" Type="Self.CT_HoaDonMua" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="HangHoa">
         <PropertyRef Name="ID_HangHoa" />
@@ -320,8 +242,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CT_HoaDonMua_HoaDonMua">
-    <End Type="STORAGEModel.HoaDonMua" Role="HoaDonMua" Multiplicity="1" />
-    <End Type="STORAGEModel.CT_HoaDonMua" Role="CT_HoaDonMua" Multiplicity="0..1" />
+    <End Role="HoaDonMua" Type="Self.HoaDonMua" Multiplicity="1" />
+    <End Role="CT_HoaDonMua" Type="Self.CT_HoaDonMua" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="HoaDonMua">
         <PropertyRef Name="ID_HDMua" />
@@ -332,8 +254,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CT_HoaDonMua_Xoa">
-    <End Type="STORAGEModel.Xoa" Role="Xoa" Multiplicity="0..1" />
-    <End Type="STORAGEModel.CT_HoaDonMua" Role="CT_HoaDonMua" Multiplicity="*" />
+    <End Role="Xoa" Type="Self.Xoa" Multiplicity="0..1" />
+    <End Role="CT_HoaDonMua" Type="Self.CT_HoaDonMua" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Xoa">
         <PropertyRef Name="ID_Xoa" />
@@ -344,8 +266,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_HangHoa_Xoa">
-    <End Type="STORAGEModel.Xoa" Role="Xoa" Multiplicity="0..1" />
-    <End Type="STORAGEModel.HangHoa" Role="HangHoa" Multiplicity="*" />
+    <End Role="Xoa" Type="Self.Xoa" Multiplicity="0..1" />
+    <End Role="HangHoa" Type="Self.HangHoa" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Xoa">
         <PropertyRef Name="ID_Xoa" />
@@ -356,8 +278,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_HoaDonBan_KhachHang">
-    <End Type="STORAGEModel.KhachHang" Role="KhachHang" Multiplicity="0..1" />
-    <End Type="STORAGEModel.HoaDonBan" Role="HoaDonBan" Multiplicity="*" />
+    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1" />
+    <End Role="HoaDonBan" Type="Self.HoaDonBan" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="KhachHang">
         <PropertyRef Name="ID_KhachHang" />
@@ -368,8 +290,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_HoaDonBan_Kho">
-    <End Type="STORAGEModel.Kho" Role="Kho" Multiplicity="0..1" />
-    <End Type="STORAGEModel.HoaDonBan" Role="HoaDonBan" Multiplicity="*" />
+    <End Role="Kho" Type="Self.Kho" Multiplicity="0..1" />
+    <End Role="HoaDonBan" Type="Self.HoaDonBan" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Kho">
         <PropertyRef Name="ID_Kho" />
@@ -380,8 +302,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_HoaDonBan_NhanVien">
-    <End Type="STORAGEModel.NhanVien" Role="NhanVien" Multiplicity="0..1" />
-    <End Type="STORAGEModel.HoaDonBan" Role="HoaDonBan" Multiplicity="*" />
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
+    <End Role="HoaDonBan" Type="Self.HoaDonBan" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="NhanVien">
         <PropertyRef Name="ID_NhanVien" />
@@ -392,8 +314,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_HoaDonBan_Xoa">
-    <End Type="STORAGEModel.Xoa" Role="Xoa" Multiplicity="0..1" />
-    <End Type="STORAGEModel.HoaDonBan" Role="HoaDonBan" Multiplicity="*" />
+    <End Role="Xoa" Type="Self.Xoa" Multiplicity="0..1" />
+    <End Role="HoaDonBan" Type="Self.HoaDonBan" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Xoa">
         <PropertyRef Name="ID_Xoa" />
@@ -404,8 +326,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_HoaDonMua_Kho">
-    <End Type="STORAGEModel.Kho" Role="Kho" Multiplicity="0..1" />
-    <End Type="STORAGEModel.HoaDonMua" Role="HoaDonMua" Multiplicity="*" />
+    <End Role="Kho" Type="Self.Kho" Multiplicity="0..1" />
+    <End Role="HoaDonMua" Type="Self.HoaDonMua" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Kho">
         <PropertyRef Name="ID_Kho" />
@@ -416,8 +338,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_HoaDonMua_NhaCungCap">
-    <End Type="STORAGEModel.NhaCungCap" Role="NhaCungCap" Multiplicity="0..1" />
-    <End Type="STORAGEModel.HoaDonMua" Role="HoaDonMua" Multiplicity="*" />
+    <End Role="NhaCungCap" Type="Self.NhaCungCap" Multiplicity="0..1" />
+    <End Role="HoaDonMua" Type="Self.HoaDonMua" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="NhaCungCap">
         <PropertyRef Name="ID_NhaCungCap" />
@@ -428,8 +350,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_HoaDonMua_NhanVien">
-    <End Type="STORAGEModel.NhanVien" Role="NhanVien" Multiplicity="0..1" />
-    <End Type="STORAGEModel.HoaDonMua" Role="HoaDonMua" Multiplicity="*" />
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
+    <End Role="HoaDonMua" Type="Self.HoaDonMua" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="NhanVien">
         <PropertyRef Name="ID_NhanVien" />
@@ -440,8 +362,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_HoaDonMua_Xoa">
-    <End Type="STORAGEModel.Xoa" Role="Xoa" Multiplicity="0..1" />
-    <End Type="STORAGEModel.HoaDonMua" Role="HoaDonMua" Multiplicity="*" />
+    <End Role="Xoa" Type="Self.Xoa" Multiplicity="0..1" />
+    <End Role="HoaDonMua" Type="Self.HoaDonMua" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Xoa">
         <PropertyRef Name="ID_Xoa" />
@@ -452,8 +374,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_KhachHang_Xoa">
-    <End Type="STORAGEModel.Xoa" Role="Xoa" Multiplicity="0..1" />
-    <End Type="STORAGEModel.KhachHang" Role="KhachHang" Multiplicity="*" />
+    <End Role="Xoa" Type="Self.Xoa" Multiplicity="0..1" />
+    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Xoa">
         <PropertyRef Name="ID_Xoa" />
@@ -464,8 +386,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Kho_Xoa">
-    <End Type="STORAGEModel.Xoa" Role="Xoa" Multiplicity="0..1" />
-    <End Type="STORAGEModel.Kho" Role="Kho" Multiplicity="*" />
+    <End Role="Xoa" Type="Self.Xoa" Multiplicity="0..1" />
+    <End Role="Kho" Type="Self.Kho" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Xoa">
         <PropertyRef Name="ID_Xoa" />
@@ -476,8 +398,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_NhaCungCap_Xoa">
-    <End Type="STORAGEModel.Xoa" Role="Xoa" Multiplicity="0..1" />
-    <End Type="STORAGEModel.NhaCungCap" Role="NhaCungCap" Multiplicity="*" />
+    <End Role="Xoa" Type="Self.Xoa" Multiplicity="0..1" />
+    <End Role="NhaCungCap" Type="Self.NhaCungCap" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Xoa">
         <PropertyRef Name="ID_Xoa" />
@@ -488,8 +410,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_NhanVien_Xoa">
-    <End Type="STORAGEModel.Xoa" Role="Xoa" Multiplicity="0..1" />
-    <End Type="STORAGEModel.NhanVien" Role="NhanVien" Multiplicity="*" />
+    <End Role="Xoa" Type="Self.Xoa" Multiplicity="0..1" />
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Xoa">
         <PropertyRef Name="ID_Xoa" />
@@ -499,4 +421,93 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityContainer Name="STORAGEEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CT_HoaDonBan" EntityType="Self.CT_HoaDonBan" />
+    <EntitySet Name="CT_HoaDonMua" EntityType="Self.CT_HoaDonMua" />
+    <EntitySet Name="HangHoas" EntityType="Self.HangHoa" />
+    <EntitySet Name="HoaDonBans" EntityType="Self.HoaDonBan" />
+    <EntitySet Name="HoaDonMuas" EntityType="Self.HoaDonMua" />
+    <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
+    <EntitySet Name="Khoes" EntityType="Self.Kho" />
+    <EntitySet Name="NhaCungCaps" EntityType="Self.NhaCungCap" />
+    <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Xoas" EntityType="Self.Xoa" />
+    <AssociationSet Name="FK_CT_HoaDonBan_HangHoa" Association="Self.FK_CT_HoaDonBan_HangHoa">
+      <End Role="HangHoa" EntitySet="HangHoas" />
+      <End Role="CT_HoaDonBan" EntitySet="CT_HoaDonBan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_HoaDonBan_HoaDonBan" Association="Self.FK_CT_HoaDonBan_HoaDonBan">
+      <End Role="HoaDonBan" EntitySet="HoaDonBans" />
+      <End Role="CT_HoaDonBan" EntitySet="CT_HoaDonBan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_HoaDonBan_Xoa" Association="Self.FK_CT_HoaDonBan_Xoa">
+      <End Role="Xoa" EntitySet="Xoas" />
+      <End Role="CT_HoaDonBan" EntitySet="CT_HoaDonBan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_HoaDonMua_HangHoa" Association="Self.FK_CT_HoaDonMua_HangHoa">
+      <End Role="HangHoa" EntitySet="HangHoas" />
+      <End Role="CT_HoaDonMua" EntitySet="CT_HoaDonMua" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_HoaDonMua_HoaDonMua" Association="Self.FK_CT_HoaDonMua_HoaDonMua">
+      <End Role="HoaDonMua" EntitySet="HoaDonMuas" />
+      <End Role="CT_HoaDonMua" EntitySet="CT_HoaDonMua" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_HoaDonMua_Xoa" Association="Self.FK_CT_HoaDonMua_Xoa">
+      <End Role="Xoa" EntitySet="Xoas" />
+      <End Role="CT_HoaDonMua" EntitySet="CT_HoaDonMua" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HangHoa_Xoa" Association="Self.FK_HangHoa_Xoa">
+      <End Role="Xoa" EntitySet="Xoas" />
+      <End Role="HangHoa" EntitySet="HangHoas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDonBan_KhachHang" Association="Self.FK_HoaDonBan_KhachHang">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="HoaDonBan" EntitySet="HoaDonBans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDonBan_Kho" Association="Self.FK_HoaDonBan_Kho">
+      <End Role="Kho" EntitySet="Khoes" />
+      <End Role="HoaDonBan" EntitySet="HoaDonBans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDonBan_NhanVien" Association="Self.FK_HoaDonBan_NhanVien">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="HoaDonBan" EntitySet="HoaDonBans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDonBan_Xoa" Association="Self.FK_HoaDonBan_Xoa">
+      <End Role="Xoa" EntitySet="Xoas" />
+      <End Role="HoaDonBan" EntitySet="HoaDonBans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDonMua_Kho" Association="Self.FK_HoaDonMua_Kho">
+      <End Role="Kho" EntitySet="Khoes" />
+      <End Role="HoaDonMua" EntitySet="HoaDonMuas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDonMua_NhaCungCap" Association="Self.FK_HoaDonMua_NhaCungCap">
+      <End Role="NhaCungCap" EntitySet="NhaCungCaps" />
+      <End Role="HoaDonMua" EntitySet="HoaDonMuas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDonMua_NhanVien" Association="Self.FK_HoaDonMua_NhanVien">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="HoaDonMua" EntitySet="HoaDonMuas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDonMua_Xoa" Association="Self.FK_HoaDonMua_Xoa">
+      <End Role="Xoa" EntitySet="Xoas" />
+      <End Role="HoaDonMua" EntitySet="HoaDonMuas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KhachHang_Xoa" Association="Self.FK_KhachHang_Xoa">
+      <End Role="Xoa" EntitySet="Xoas" />
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kho_Xoa" Association="Self.FK_Kho_Xoa">
+      <End Role="Xoa" EntitySet="Xoas" />
+      <End Role="Kho" EntitySet="Khoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhaCungCap_Xoa" Association="Self.FK_NhaCungCap_Xoa">
+      <End Role="Xoa" EntitySet="Xoas" />
+      <End Role="NhaCungCap" EntitySet="NhaCungCaps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhanVien_Xoa" Association="Self.FK_NhanVien_Xoa">
+      <End Role="Xoa" EntitySet="Xoas" />
+      <End Role="NhanVien" EntitySet="NhanViens" />
+    </AssociationSet>
+  </EntityContainer>
 </Schema>

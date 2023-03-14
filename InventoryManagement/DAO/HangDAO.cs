@@ -36,9 +36,9 @@ namespace InventoryManagement.DAO
         #region insert & update
         public int InsertUpdate(HangHoa item)
         {
-            using ( var db = new STORAGEEntities())
+            using ( var db = new STORAGEEntities1())
             {
-                using (var db1 = new STORAGEEntities())
+                using (var db1 = new STORAGEEntities1())
                 {
                     var find = db.HangHoas.FirstOrDefault(x => x.ID_HangHoa == item.ID_HangHoa);
                     if (find != null)
@@ -54,7 +54,7 @@ namespace InventoryManagement.DAO
 
         public void Delete_ID(int id)
         {
-            using (var db = new STORAGEEntities())
+            using (var db = new STORAGEEntities1())
             {
                 var obj = db.HangHoas.FirstOrDefault(x => x.ID_HangHoa == id);
                 if (obj != null)

@@ -39,12 +39,12 @@ namespace InventoryManagement.Forms
 
         private void btnPurchaseBill_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new PurshaseBillForm(), sender);
+            OpenChildForm(new BillBuyForm(), sender);
         }
 
         private void btnPurchaseSell_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new SellBillForm(), sender);
+            OpenChildForm(new BillSellForm(), sender);
         }
 
     }
