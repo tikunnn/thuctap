@@ -48,7 +48,6 @@ namespace InventoryManagement.Forms
 
             int count = 1;
             lvCommodity.Items.Clear();
-
             foreach (var hh in dsHangHoa)
             {
                 ListViewItem item = lvCommodity.Items.Add(count.ToString());
@@ -89,6 +88,7 @@ namespace InventoryManagement.Forms
 
         private void btnDefault_Click(object sender, EventArgs e)
         {
+            btnSave.Enabled = true;
             this.tbID.Text = "";
             this.tbCommodityName.Text = "";
             this.tbOrigin.Text = "";
@@ -99,12 +99,11 @@ namespace InventoryManagement.Forms
 
         private void lvCommodity_Click(object sender, EventArgs e)
         {
-            btnSave.Enabled = false;
-            for (int i = 0; i < lvCommodity.Items.Count; i++)
+                for (int i = 0; i < lvCommodity.Items.Count; i++)
             {
                 if (lvCommodity.Items[i].Selected)
                 {
-                    HangHoa hhCurrent = new HangHoa();
+                    hhCurrent = new HangHoa();
                     hhCurrent = dsHangHoa[i];
                     tbID.Text = hhCurrent.ID_HangHoa.ToString();
                     tbCommodityName.Text = hhCurrent.Ten;
@@ -120,7 +119,6 @@ namespace InventoryManagement.Forms
                     {
                         MemoryStream ms = new MemoryStream(hhCurrent.HinhAnh);
                         pbPicture.Image = Image.FromStream(ms);
-
                     }
                 }
             }
@@ -147,14 +145,14 @@ namespace InventoryManagement.Forms
                 lvCommodity.Items.Add(item);
             }
         }
-        
+
         private void btnSave_Click(object sender, EventArgs e)
         {
-            InsertHangHoa();
+            InsertUpdateHangHoa();
             LoadHangHoa();
         }
 
-        private int InsertHangHoa()
+        private int InsertUpdateHangHoa()
         {
             var dao = new HangDAO();
 
@@ -165,35 +163,41 @@ namespace InventoryManagement.Forms
             }
             else
             {
-                hh.ID_HangHoa = Convert.ToInt32(tbID.Text);
+                hh.ID_HangHoa = tbID.Text != "" ? Convert.ToInt32(tbID.Text) : -1;
                 hh.Ten = tbCommodityName.Text;
                 hh.XuatXu = tbOrigin.Text;
                 hh.DonViTinh = tbUnit.Text;
                 hh.GiaBan = Convert.ToInt32(tbExportPrice.Text);
-                hh.Created_By = _nhanvien.Ten;
-                hh.Created_At = DateTime.Now;
-                
-
-                if (pbPicture.Image == null)
+                if (hh.ID_HangHoa == -1)
                 {
-                    FileStream file = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
-                    BinaryReader binary = new BinaryReader(file);
-
-                    img = binary.ReadBytes((int)file.Length);
-                    hh.HinhAnh = img;
+                    hh.Created_By = _nhanvien.Ten;
+                    hh.Created_At = DateTime.Now;
+                    if (pbPicture.Image != null)
+                    {
+                        hh.HinhAnh = ImageToByteArray(pbPicture.Image);
+                    }
                     MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return dao.InsertUpdate(hh);
                 }
-                //else
-                //{
-                //    hh.HinhAnh = ImageToByteArray(pbPicture.Image);
-                //    MessageBox.Show("Cập nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //    return dao.InsertUpdate(hh);
-                //}
+                else
+                {
+                    hh.Created_By = hhCurrent.Created_By;
+                    hh.Created_At = hhCurrent.Created_At;
+                    hh.Updated_By = _nhanvien.Ten;
+                    hh.Updated_At = DateTime.Now;
+
+                    if (pbPicture.Image != null)
+                    {
+                        hh.HinhAnh = ImageToByteArray(pbPicture.Image);
+                    }
+                    MessageBox.Show("Cập nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return dao.InsertUpdate(hh);
+                }
             }
             return -1;
         }
 
+        #region update
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             UpdateHangHoa();
@@ -220,32 +224,34 @@ namespace InventoryManagement.Forms
                 hh.Updated_By = _nhanvien.Ten;
                 hh.Updated_At = DateTime.Now;
 
-                //if (pbPicture.Image == null)
-                //{
-                //    FileStream file = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
-                //    BinaryReader binary = new BinaryReader(file);
+                if (pbPicture.Image == null)
+                {
+                    //FileStream file = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                    //BinaryReader binary = new BinaryReader(file);
 
-                //    img = binary.ReadBytes((int)file.Length);
-                //    hh.HinhAnh = img;
-                //    MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //    return dao.InsertUpdate(hh);
-                //}
-                //else
-                //{
-                //    hh.HinhAnh = ImageToByteArray(pbPicture.Image);
-                //    MessageBox.Show("Cập nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //    return dao.InsertUpdate(hh);
-                //}
-
-                if (pbPicture.Image != null)
+                    //img = binary.ReadBytes((int)file.Length);
+                    //hh.HinhAnh = img;
+                    hh.HinhAnh = null;
+                    MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return dao.InsertUpdate(hh);
+                }
+                else
                 {
                     hh.HinhAnh = ImageToByteArray(pbPicture.Image);
                     MessageBox.Show("Cập nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return dao.InsertUpdate(hh);
                 }
+
+                //if (pbPicture.Image != null)
+                //{
+                //    hh.HinhAnh = ImageToByteArray(pbPicture.Image);
+                //    MessageBox.Show("Cập nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //    return dao.InsertUpdate(hh);
+                //}
             }
             return -1;
         }
+        #endregion
 
 
         public byte[] ImageToByteArray(System.Drawing.Image img)

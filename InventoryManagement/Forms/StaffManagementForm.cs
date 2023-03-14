@@ -15,6 +15,7 @@ namespace InventoryManagement.Forms
 {
     public partial class StaffManagementForm : Form
     {
+        Home home = new Home();
         private NhanVien _nhanvien;
         List<NhanVien> dsNhanVien;
         NhanVien nvCurrent = new NhanVien();
@@ -75,6 +76,7 @@ namespace InventoryManagement.Forms
             #endregion
         }
 
+
         private void btnReset_Click(object sender, EventArgs e)
         {
             btnAdd.Enabled = true;
@@ -96,6 +98,7 @@ namespace InventoryManagement.Forms
         private void lvUser_Click(object sender, EventArgs e)
         {
             btnAdd.Enabled = false;
+            tbID.Enabled = false;
             for (int i = 0; i < lvUser.Items.Count; i++)
             {
                 if (lvUser.Items[i].Selected)
@@ -122,6 +125,7 @@ namespace InventoryManagement.Forms
         {
             InsertStaff();
             LoadNhanVien();
+
         }
 
         private int InsertStaff()
@@ -163,7 +167,6 @@ namespace InventoryManagement.Forms
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             UpdateStaff();
-            
             LoadNhanVien();
         }
         private int UpdateStaff()

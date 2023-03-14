@@ -1,4 +1,5 @@
 ﻿using InventoryManagement.DAO;
+using InventoryManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace InventoryManagement
 {
     public partial class Login : Form
     {
+        NhanVien _nhanvien;
         public Login()
         {
             InitializeComponent();
@@ -99,13 +101,9 @@ namespace InventoryManagement
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             if (cbShowPassword.Checked)
-            {
                 tbPass.PasswordChar = '\0';
-            }
             else
-            {
                 tbPass.PasswordChar = '*';
-            }
         }
     }
 }
