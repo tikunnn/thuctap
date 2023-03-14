@@ -54,7 +54,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -288,25 +287,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnUpdate.Location = new System.Drawing.Point(361, 182);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(144, 37);
-            this.btnUpdate.TabIndex = 10;
-            this.btnUpdate.Text = "Cập nhật";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
             // CommodityManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(968, 768);
-            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDefault);
@@ -365,6 +351,5 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteCommodity;
-        private System.Windows.Forms.Button btnUpdate;
     }
 }

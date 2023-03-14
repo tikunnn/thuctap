@@ -197,62 +197,6 @@ namespace InventoryManagement.Forms
             return -1;
         }
 
-        #region update
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            UpdateHangHoa();
-            LoadHangHoa();
-        }
-        private int UpdateHangHoa()
-        {
-            var dao = new HangDAO();
-
-            HangHoa hh = new HangHoa();
-            if (tbCommodityName.Text == "" || tbOrigin.Text == "" || tbUnit.Text == "" || tbExportPrice.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
-            }
-            else
-            {
-                hh.ID_HangHoa = Convert.ToInt32(tbID.Text);
-                hh.Ten = tbCommodityName.Text;
-                hh.XuatXu = tbOrigin.Text;
-                hh.DonViTinh = tbUnit.Text;
-                hh.GiaBan = Convert.ToInt32(tbExportPrice.Text);
-                hh.Created_By = nvCurrent.Ten;
-                hh.Created_At = nvCurrent.Created_At;
-                hh.Updated_By = _nhanvien.Ten;
-                hh.Updated_At = DateTime.Now;
-
-                if (pbPicture.Image == null)
-                {
-                    //FileStream file = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
-                    //BinaryReader binary = new BinaryReader(file);
-
-                    //img = binary.ReadBytes((int)file.Length);
-                    //hh.HinhAnh = img;
-                    hh.HinhAnh = null;
-                    MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return dao.InsertUpdate(hh);
-                }
-                else
-                {
-                    hh.HinhAnh = ImageToByteArray(pbPicture.Image);
-                    MessageBox.Show("Cập nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return dao.InsertUpdate(hh);
-                }
-
-                //if (pbPicture.Image != null)
-                //{
-                //    hh.HinhAnh = ImageToByteArray(pbPicture.Image);
-                //    MessageBox.Show("Cập nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //    return dao.InsertUpdate(hh);
-                //}
-            }
-            return -1;
-        }
-        #endregion
-
 
         public byte[] ImageToByteArray(System.Drawing.Image img)
         {

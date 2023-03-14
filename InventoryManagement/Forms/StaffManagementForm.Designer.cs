@@ -68,7 +68,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiDeleteStaff = new System.Windows.Forms.ToolStripMenuItem();
             this.cbbGender = new System.Windows.Forms.ComboBox();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -432,25 +431,12 @@
             this.cbbGender.Size = new System.Drawing.Size(128, 24);
             this.cbbGender.TabIndex = 3;
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnUpdate.Location = new System.Drawing.Point(332, 181);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(100, 37);
-            this.btnUpdate.TabIndex = 11;
-            this.btnUpdate.Text = "Cập nhật";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
             // StaffManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(968, 768);
-            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.cbbGender);
             this.Controls.Add(this.lvUser);
             this.Controls.Add(this.btnReset);
@@ -532,6 +518,5 @@
         private System.Windows.Forms.ComboBox cbbGender;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteStaff;
-        private System.Windows.Forms.Button btnUpdate;
     }
 }
