@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tbID = new System.Windows.Forms.TextBox();
             this.tbAddress = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -54,11 +55,16 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsXem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsXoa = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsRefresh = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbID
@@ -279,9 +285,11 @@
             this.Column3,
             this.Column4,
             this.Column5});
+            this.dgvSupplier.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvSupplier.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSupplier.Location = new System.Drawing.Point(0, 0);
             this.dgvSupplier.Name = "dgvSupplier";
+            this.dgvSupplier.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSupplier.Size = new System.Drawing.Size(710, 263);
             this.dgvSupplier.TabIndex = 0;
             this.dgvSupplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellClick);
@@ -322,6 +330,36 @@
             this.Column5.Name = "Column5";
             this.Column5.Width = 160;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsXem,
+            this.tsXoa,
+            this.tsRefresh});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(122, 70);
+            // 
+            // tsXem
+            // 
+            this.tsXem.Name = "tsXem";
+            this.tsXem.Size = new System.Drawing.Size(121, 22);
+            this.tsXem.Text = "Xem";
+            this.tsXem.Click += new System.EventHandler(this.tsXem_Click);
+            // 
+            // tsXoa
+            // 
+            this.tsXoa.Name = "tsXoa";
+            this.tsXoa.Size = new System.Drawing.Size(121, 22);
+            this.tsXoa.Text = "Xóa";
+            this.tsXoa.Click += new System.EventHandler(this.tsXoa_Click);
+            // 
+            // tsRefresh
+            // 
+            this.tsRefresh.Name = "tsRefresh";
+            this.tsRefresh.Size = new System.Drawing.Size(121, 22);
+            this.tsRefresh.Text = "Làm mới";
+            this.tsRefresh.Click += new System.EventHandler(this.tsRefresh_Click);
+            // 
             // SupplierManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -341,6 +379,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,5 +413,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem tsXem;
+        private System.Windows.Forms.ToolStripMenuItem tsXoa;
+        private System.Windows.Forms.ToolStripMenuItem tsRefresh;
     }
 }

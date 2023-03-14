@@ -58,7 +58,7 @@ namespace InventoryManagement.Forms
 
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void Refresh()
         {
             LoadData();
             tbID.Text = string.Empty;
@@ -66,6 +66,11 @@ namespace InventoryManagement.Forms
             tbAddress.Text = string.Empty;
             tbPhoneNumber.Text = string.Empty;
             tbNote.Text = string.Empty;
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            Refresh();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -135,9 +140,12 @@ namespace InventoryManagement.Forms
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            //var ncc = new NhaCungCap();
+            Remove();
+        }
+
+        private void Remove()
+        {
             int i = Convert.ToInt32(tbID.Text);
-            //var dao=new NccDAO();
             dao.Delete(i);
             LoadData();
         }
@@ -149,6 +157,19 @@ namespace InventoryManagement.Forms
             dgvSupplier.DataSource = searchCusDao;
         }
 
+        private void tsRefresh_Click(object sender, EventArgs e)
+        {
+            Refresh();
+        }
 
+        private void tsXem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsXoa_Click(object sender, EventArgs e)
+        {
+            Remove();
+        }
     }
 }
