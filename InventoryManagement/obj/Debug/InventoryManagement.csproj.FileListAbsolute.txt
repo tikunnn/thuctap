@@ -46,3 +46,6 @@ D:\aaaaaaaaaaaaaaaa\thuctap\InventoryManagement\obj\Debug\InventoryManagement.cs
 D:\aaaaaaaaaaaaaaaa\thuctap\InventoryManagement\obj\Debug\InventoryManagement.csproj.CopyComplete
 D:\aaaaaaaaaaaaaaaa\thuctap\InventoryManagement\obj\Debug\InventoryManagement.exe
 D:\aaaaaaaaaaaaaaaa\thuctap\InventoryManagement\obj\Debug\InventoryManagement.pdb
+D:\aaaaaaaaaaaaaaaa\thuctap\InventoryManagement\obj\Debug\InventoryManagement.Forms.CustomerManagement.resources
+D:\aaaaaaaaaaaaaaaa\thuctap\InventoryManagement\obj\Debug\InventoryManagement.Forms.CustomerSupplierManagement.resources
+D:\aaaaaaaaaaaaaaaa\thuctap\InventoryManagement\obj\Debug\InventoryManagement.Forms.SupplierManagement.resources

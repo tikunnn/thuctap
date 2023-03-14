@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.panelHome = new System.Windows.Forms.Panel();
             this.lbUserName = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.pnScreen = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnCusSupp = new System.Windows.Forms.Button();
             this.btnSpendingManagement = new System.Windows.Forms.Button();
             this.btnStaffManagement = new System.Windows.Forms.Button();
             this.btnCommodityManagement = new System.Windows.Forms.Button();
             this.ptbPicUser = new System.Windows.Forms.PictureBox();
+            this.pnScreen = new System.Windows.Forms.Panel();
             this.panelHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPicUser)).BeginInit();
             this.SuspendLayout();
@@ -47,13 +47,13 @@
             this.panelHome.BackColor = System.Drawing.Color.FloralWhite;
             this.panelHome.Controls.Add(this.lbUserName);
             this.panelHome.Controls.Add(this.btnLogOut);
-            this.panelHome.Controls.Add(this.button4);
+            this.panelHome.Controls.Add(this.btnCusSupp);
             this.panelHome.Controls.Add(this.btnSpendingManagement);
             this.panelHome.Controls.Add(this.btnStaffManagement);
             this.panelHome.Controls.Add(this.btnCommodityManagement);
             this.panelHome.Controls.Add(this.ptbPicUser);
             this.panelHome.Location = new System.Drawing.Point(0, 0);
-            this.panelHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelHome.Margin = new System.Windows.Forms.Padding(2);
             this.panelHome.Name = "panelHome";
             this.panelHome.Size = new System.Drawing.Size(234, 624);
             this.panelHome.TabIndex = 0;
@@ -72,40 +72,13 @@
             this.lbUserName.TabIndex = 0;
             this.lbUserName.Text = "Tên người dùng";
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.SandyBrown;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 420);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(234, 55);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // pnScreen
-            // 
-            this.pnScreen.BackColor = System.Drawing.Color.Linen;
-            this.pnScreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnScreen.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnScreen.Location = new System.Drawing.Point(233, 0);
-            this.pnScreen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pnScreen.Name = "pnScreen";
-            this.pnScreen.Size = new System.Drawing.Size(727, 624);
-            this.pnScreen.TabIndex = 1;
-            // 
             // btnLogOut
             // 
             this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Image = global::InventoryManagement.Properties.Resources.logout_black;
+            this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogOut.Location = new System.Drawing.Point(0, 552);
             this.btnLogOut.Margin = new System.Windows.Forms.Padding(2);
@@ -117,13 +90,31 @@
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // btnCusSupp
+            // 
+            this.btnCusSupp.BackColor = System.Drawing.Color.SandyBrown;
+            this.btnCusSupp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCusSupp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCusSupp.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCusSupp.Image = ((System.Drawing.Image)(resources.GetObject("btnCusSupp.Image")));
+            this.btnCusSupp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCusSupp.Location = new System.Drawing.Point(0, 420);
+            this.btnCusSupp.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCusSupp.Name = "btnCusSupp";
+            this.btnCusSupp.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnCusSupp.Size = new System.Drawing.Size(234, 55);
+            this.btnCusSupp.TabIndex = 4;
+            this.btnCusSupp.Text = "Quản lý cung cầu";
+            this.btnCusSupp.UseVisualStyleBackColor = false;
+            this.btnCusSupp.Click += new System.EventHandler(this.btnCusSupp_Click);
+            // 
             // btnSpendingManagement
             // 
             this.btnSpendingManagement.BackColor = System.Drawing.Color.SandyBrown;
             this.btnSpendingManagement.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSpendingManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSpendingManagement.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSpendingManagement.Image = global::InventoryManagement.Properties.Resources.wages;
+            this.btnSpendingManagement.Image = ((System.Drawing.Image)(resources.GetObject("btnSpendingManagement.Image")));
             this.btnSpendingManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSpendingManagement.Location = new System.Drawing.Point(0, 360);
             this.btnSpendingManagement.Margin = new System.Windows.Forms.Padding(2);
@@ -141,7 +132,7 @@
             this.btnStaffManagement.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStaffManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStaffManagement.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStaffManagement.Image = global::InventoryManagement.Properties.Resources.teamwork;
+            this.btnStaffManagement.Image = ((System.Drawing.Image)(resources.GetObject("btnStaffManagement.Image")));
             this.btnStaffManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStaffManagement.Location = new System.Drawing.Point(0, 300);
             this.btnStaffManagement.Margin = new System.Windows.Forms.Padding(2);
@@ -160,7 +151,7 @@
             this.btnCommodityManagement.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCommodityManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCommodityManagement.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCommodityManagement.Image = global::InventoryManagement.Properties.Resources.inventory;
+            this.btnCommodityManagement.Image = ((System.Drawing.Image)(resources.GetObject("btnCommodityManagement.Image")));
             this.btnCommodityManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCommodityManagement.Location = new System.Drawing.Point(0, 240);
             this.btnCommodityManagement.Margin = new System.Windows.Forms.Padding(2);
@@ -183,6 +174,17 @@
             this.ptbPicUser.TabIndex = 1;
             this.ptbPicUser.TabStop = false;
             // 
+            // pnScreen
+            // 
+            this.pnScreen.BackColor = System.Drawing.Color.Linen;
+            this.pnScreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnScreen.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnScreen.Location = new System.Drawing.Point(233, 0);
+            this.pnScreen.Margin = new System.Windows.Forms.Padding(2);
+            this.pnScreen.Name = "pnScreen";
+            this.pnScreen.Size = new System.Drawing.Size(727, 624);
+            this.pnScreen.TabIndex = 1;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,7 +193,7 @@
             this.Controls.Add(this.pnScreen);
             this.Controls.Add(this.panelHome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
@@ -207,11 +209,11 @@
         private System.Windows.Forms.Panel panelHome;
         private System.Windows.Forms.PictureBox ptbPicUser;
         private System.Windows.Forms.Button btnLogOut;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnCusSupp;
         private System.Windows.Forms.Button btnSpendingManagement;
         private System.Windows.Forms.Button btnStaffManagement;
         private System.Windows.Forms.Button btnCommodityManagement;
         private System.Windows.Forms.Panel pnScreen;
-        private System.Windows.Forms.Label lbUserName;
+        public System.Windows.Forms.Label lbUserName;
     }
 }

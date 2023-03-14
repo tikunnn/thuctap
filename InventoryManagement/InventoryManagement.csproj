@@ -59,8 +59,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\BaseDAO.cs" />
+    <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\HangDAO.cs" />
     <Compile Include="DAO\NguoiDAO.cs" />
+    <Compile Include="DAO\SupplierDAO.cs" />
     <Compile Include="Forms\CommodityDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +74,18 @@
     </Compile>
     <Compile Include="Forms\CommodityManagementForm.Designer.cs">
       <DependentUpon>CommodityManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerManagement.Designer.cs">
+      <DependentUpon>CustomerManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerSupplierManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerSupplierManagement.Designer.cs">
+      <DependentUpon>CustomerSupplierManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\PurshaseBillForm.cs">
       <SubType>Form</SubType>
@@ -102,6 +116,12 @@
     </Compile>
     <Compile Include="Forms\StaffManagementForm.Designer.cs">
       <DependentUpon>StaffManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SupplierManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SupplierManagement.Designer.cs">
+      <DependentUpon>SupplierManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -168,6 +188,12 @@
     <EmbeddedResource Include="Forms\CommodityManagementForm.resx">
       <DependentUpon>CommodityManagementForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerManagement.resx">
+      <DependentUpon>CustomerManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerSupplierManagement.resx">
+      <DependentUpon>CustomerSupplierManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PurshaseBillForm.resx">
       <DependentUpon>PurshaseBillForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +209,9 @@
     <EmbeddedResource Include="Forms\StaffManagementForm.resx">
       <DependentUpon>StaffManagementForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SupplierManagement.resx">
+      <DependentUpon>SupplierManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,14 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EntityDeploy Include="Models\STORAGEDbContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>STORAGEDbContext.Designer.cs</LastGenOutput>
@@ -211,6 +235,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>

@@ -1,4 +1,5 @@
 ﻿using InventoryManagement.DAO;
+using InventoryManagement.Forms;
 using InventoryManagement.Models;
 using System;
 using System.Collections.Generic;
@@ -82,6 +83,8 @@ namespace InventoryManagement
                     {
                         Home home = new Home(login);
                         home.LoadName();
+                        CustomerManagement cm=new CustomerManagement(login);
+                        cm.LoadName();
                         home.ShowDialog();
                     }
                     else

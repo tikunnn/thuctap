@@ -1,4 +1,5 @@
-﻿using InventoryManagement.Models;
+﻿using InventoryManagement.Forms;
+using InventoryManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -71,6 +72,14 @@ namespace InventoryManagement
         private void btnSpendingManagement_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.SpendingManagementForm(), sender);
+        }
+
+        private void btnCusSupp_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.CustomerSupplierManagement(), sender);
+
+            //Forms.CustomerManagement customer = new Forms.CustomerManagement(lbUserName.Text);
+
         }
     }
 }
